@@ -1,0 +1,83 @@
+"use client";
+
+import Image from "next/image";
+import { motion } from "motion/react";
+import { serifStyle } from "@/lib/motion";
+
+const Characters = () => {
+  return (
+    <section className="bg-white px-4 pb-8 pt-22 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-8xl">
+        <motion.h2
+          className="text-center text-xl lowercase tracking-tight text-[#ff1fa8] sm:text-4xl lg:text-6xl"
+          style={serifStyle}
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
+          characters
+        </motion.h2>
+
+        <motion.div
+          className="relative w-full"
+          initial={{ opacity: 0, scale: 0.97 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
+        >
+          <Image
+            src="/image 45.png"
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "100%", height: "auto", display: "block" }}
+            alt="Happy Hoppers characters"
+          />
+        </motion.div>
+
+        <motion.div
+          className="mx-auto mt-8 max-w-7xl text-center"
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+        >
+          <p className="text-[18px] leading-[1.24] text-[#123b47] sm:text-[22px] lg:text-[18px]">
+            At 29, Gina Ballotta was inspired to invent a different kind of
+            children&apos;s book... something never done before! She began by
+            creating 16 unique characters, each with special traits and
+            personalities. Gina refined her illustrations, poetic writings and
+            sculptures, ultimately perfecting the characters and their stories.
+            Then, miraculously, they took on a life of their own and became...
+          </p>
+
+          <p className="mt-2 text-[28px] leading-none sm:text-[38px] lg:text-[22px]">
+            <motion.span
+              className="lowercase tracking-tight text-[#ff2eb3]"
+              style={serifStyle}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.8 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+            >
+              the happy hoppers
+            </motion.span>{" "}
+            <motion.span
+              className="lowercase tracking-tight text-[#2a3ccf]"
+              style={serifStyle}
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.8 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.35 }}
+            >
+              adventures series!
+            </motion.span>
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default Characters;
