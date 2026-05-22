@@ -6,7 +6,7 @@ const Footnote = () => {
   return (
     <footer className="bg-[#d0edf4] px-8 py-8 text-center md:px-16">
       <motion.p
-        className="mx-auto max-w-4xl text-sm leading-relaxed text-[#1a1a1a]"
+        className="mx-auto max-w-8xl text-sm leading-relaxed text-[#1a1a1a]"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
