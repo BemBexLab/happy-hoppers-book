@@ -12,7 +12,7 @@ const FADE_LEFT_P2 = fromLeft(1.15, 30, 0.65, 0.3);
 
 const AboutAuthor = () => {
   return (
-    <section className="relative h-screen overflow-hidden bg-white">
+    <section className="relative min-h-screen overflow-hidden bg-white">
       <motion.div
         aria-hidden
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -22,9 +22,9 @@ const AboutAuthor = () => {
         transition={{ duration: 1.4, ease: "easeOut" }}
       />
 
-      <div className="relative z-10 flex h-full flex-col px-6 py-8 lg:px-12">
+      <div className="relative z-10 flex min-h-screen flex-col px-6 py-4 sm:py-6 lg:px-12 lg:py-8">
         <motion.h2
-          className="pt-10 text-center text-[42px] italic leading-none text-[#ff1fa8] lg:text-[52px]"
+          className="pt-5 text-center text-[42px] italic leading-none text-[#ff1fa8] sm:pt-8 lg:pt-10 lg:text-[52px]"
           style={serifStyle}
           variants={headingContainer}
           initial="hidden"
@@ -38,14 +38,14 @@ const AboutAuthor = () => {
         <div className="flex flex-1 items-center">
           <div className="w-full lg:max-w-[55%]">
             <motion.p
-              className="mb-4 text-center text-3xl font-semibold italic text-[#2e2e2e]"
+              className="mb-4 text-center text-xl font-semibold italic text-[#2e2e2e] sm:text-2xl lg:text-3xl"
               style={serifStyle}
               {...FADE_UP_SUBTITLE}
             >
               ~ poet, artist, author, sculptor ~
             </motion.p>
 
-            <motion.p className="mb-4 text-xl leading-[1.7] text-[#2e2e2e]" {...FADE_LEFT_P1}>
+            <motion.p className="mb-4 text-base leading-[1.7] text-[#2e2e2e] sm:text-lg lg:text-xl" {...FADE_LEFT_P1}>
               <motion.span
                 className="font-bold italic text-[#10069F]"
                 style={serifStyle}
@@ -63,7 +63,7 @@ const AboutAuthor = () => {
               polish her innate talents.
             </motion.p>
 
-            <motion.p className="text-xl leading-[1.7] text-[#2e2e2e]" {...FADE_LEFT_P2}>
+            <motion.p className="text-base leading-[1.7] text-[#2e2e2e] sm:text-lg lg:text-xl" {...FADE_LEFT_P2}>
               At 29, Gina was inspired to invent a different kind of
               children&apos;s book... something never done before! She began by
               creating 16 unique characters, each with special traits and

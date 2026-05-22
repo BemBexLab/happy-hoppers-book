@@ -9,7 +9,7 @@ const textChars = "toy sculptures coming soon!".split("");
 
 const ToySculptures = () => {
   return (
-    <section className="bg-white px-8 pt-8">
+    <section className="bg-white px-4 pt-4 sm:px-6 sm:pt-6 lg:px-8 lg:pt-8">
       <motion.div
         className="relative mx-auto w-full max-w-[1500px]"
         initial={{ opacity: 0, scale: 0.97 }}
@@ -27,9 +27,9 @@ const ToySculptures = () => {
         />
 
         <div className="absolute bottom-[8%] left-1/2 -translate-x-1/2">
-          <div className="border border-[#1a1a1a] bg-white px-6 py-2">
+          <div className="border border-[#1a1a1a] bg-white px-2 py-1 sm:px-4 sm:py-1.5 lg:px-6 lg:py-2">
             <motion.p
-              className="whitespace-nowrap text-5xl text-[#1a1a1a]"
+              className="whitespace-nowrap text-sm text-[#1a1a1a] sm:text-xl md:text-3xl lg:text-5xl"
               style={serifStyle}
               variants={containerVariants}
               initial="hidden"

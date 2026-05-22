@@ -40,7 +40,7 @@ const HappyHoppersBooks = () => {
         transition={{ duration: 0.8, ease: "easeInOut" }}
       />
 
-      <section className="relative overflow-hidden bg-white pb-10 sm:pb-12">
+      <section className="relative overflow-hidden bg-white pb-10 sm:pb-12 lg:pb-12">
         <div
           aria-hidden
           className="absolute inset-0 bg-center bg-no-repeat"
@@ -51,7 +51,7 @@ const HappyHoppersBooks = () => {
           }}
         />
 
-        <div className="relative z-10 mx-auto max-w-[1180px] border-t border-[#aeeeff] pt-8">
+        <div className="relative z-10 mx-auto max-w-[1180px] border-t border-[#aeeeff] px-4 pt-8 sm:px-6 lg:px-0">
           <motion.div
             className="text-center"
             initial={{ opacity: 0, y: 24 }}
@@ -59,10 +59,10 @@ const HappyHoppersBooks = () => {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <p className="text-[24px] font-medium tracking-tight text-[#153f48] sm:text-[34px]">
+            <p className="text-[22px] font-medium tracking-tight text-[#153f48] sm:text-[28px] lg:text-[34px]">
               Happy Hoppers Books
             </p>
-            <h2 className="mt-2 text-[34px] leading-none sm:text-6xl">
+            <h2 className="mt-2 text-[32px] leading-[0.95] sm:text-[46px] lg:text-6xl">
               <span className="lowercase tracking-tight text-[#ff2eb3]" style={serifStyle}>
                 the happy hoppers
               </span>{" "}
@@ -71,7 +71,7 @@ const HappyHoppersBooks = () => {
               </span>
             </h2>
             <motion.p
-              className="mt-8 text-[18px] text-[#2e2e2e] sm:text-[22px]"
+              className="mt-6 text-[16px] text-[#2e2e2e] sm:mt-8 sm:text-[20px] lg:text-[22px]"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -82,7 +82,7 @@ const HappyHoppersBooks = () => {
           </motion.div>
 
           <motion.div
-            className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"
+            className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:gap-4"
             variants={gridContainer}
             initial="hidden"
             whileInView="show"
@@ -96,7 +96,7 @@ const HappyHoppersBooks = () => {
                 whileTap={{ scale: 0.97 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <Link href={book.href} className="group block rounded-[2px]">
+                <Link href={book.href} className="group mx-auto block w-full max-w-[340px] rounded-[2px] sm:max-w-none">
                   <div className="overflow-hidden border border-[#4f5d61] bg-white shadow-[0_0_0_1px_rgba(255,255,255,0.2)]">
                     <motion.div
                       className="relative aspect-[0.72] w-full overflow-hidden bg-white"
@@ -107,7 +107,7 @@ const HappyHoppersBooks = () => {
                         src={book.src}
                         alt={book.title}
                         fill
-                        sizes="(max-width: 640px) 80vw, (max-width: 1024px) 40vw, 220px"
+                        sizes="(max-width: 640px) min(340px, 92vw), (max-width: 1024px) 44vw, 220px"
                         className="object-cover"
                       />
                     </motion.div>
@@ -118,7 +118,7 @@ const HappyHoppersBooks = () => {
           </motion.div>
 
           <motion.p
-            className="mt-7 text-center text-[18px] text-[#2e2e2e] sm:text-[22px]"
+            className="mt-7 text-center text-[16px] text-[#2e2e2e] sm:text-[20px] lg:text-[22px]"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

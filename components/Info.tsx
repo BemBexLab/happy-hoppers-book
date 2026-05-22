@@ -27,9 +27,9 @@ const SocialIcon = ({
 
 const Info = () => {
   return (
-    <section className="bg-white px-6 pt-10 lg:px-16">
+    <section className="bg-white px-4 pb-8 pt-6 sm:px-6 sm:pt-8 md:px-10 lg:px-16 lg:pb-0 lg:pt-10">
       <motion.h2
-        className="mb-8 text-center text-4xl italic text-[#ff1fa8] md:text-5xl"
+        className="mb-4 text-center text-3xl italic text-[#ff1fa8] sm:mb-6 sm:text-4xl md:text-5xl lg:mb-8"
         style={serifStyle}
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -41,7 +41,7 @@ const Info = () => {
 
       <div className="grid grid-cols-1 items-center lg:grid-cols-[58%_42%]">
         <motion.div
-          className="flex justify-start"
+          className="flex justify-center lg:justify-start"
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.2 }}
@@ -58,7 +58,7 @@ const Info = () => {
         </motion.div>
 
         <motion.div
-          className="flex flex-col items-center gap-6 py-8 lg:py-4"
+          className="flex flex-col items-center gap-4 py-6 sm:gap-6 sm:py-8 lg:py-4"
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.2 }}
@@ -75,21 +75,21 @@ const Info = () => {
           </div>
 
           <div className="text-center">
-            <p className="text-xl font-bold italic text-[#2a9d2a] md:text-2xl" style={serifStyle}>
+            <p className="text-lg font-bold italic text-[#2a9d2a] sm:text-xl md:text-2xl" style={serifStyle}>
               WEBSITE
             </p>
-            <p className="text-sm text-[#2e2e2e] md:text-base">www.happyhoppersbooks.com</p>
+            <p className="text-xs text-[#2e2e2e] sm:text-sm md:text-base">www.happyhoppersbooks.com</p>
           </div>
 
           <div className="text-center">
-            <p className="text-xl font-bold italic text-[#2a9d2a] md:text-2xl" style={serifStyle}>
+            <p className="text-lg font-bold italic text-[#2a9d2a] sm:text-xl md:text-2xl" style={serifStyle}>
               email
             </p>
-            <p className="text-sm text-[#2e2e2e] md:text-base">HappyHoppersBooks@gmail.com</p>
+            <p className="text-xs text-[#2e2e2e] sm:text-sm md:text-base">HappyHoppersBooks@gmail.com</p>
           </div>
 
           <div className="flex flex-col items-center gap-3">
-            <p className="text-xl font-bold italic text-[#2a9d2a] md:text-2xl" style={serifStyle}>
+            <p className="text-lg font-bold italic text-[#2a9d2a] sm:text-xl md:text-2xl" style={serifStyle}>
               social media
             </p>
             <div className="flex items-center gap-3">
@@ -116,7 +116,7 @@ const Info = () => {
             </div>
           </div>
 
-          <p className="text-center text-sm text-[#2e2e2e] md:text-base">
+          <p className="text-center text-xs text-[#2e2e2e] sm:text-sm md:text-base">
             No Tax, Shipping Cost or Returns
           </p>
         </motion.div>

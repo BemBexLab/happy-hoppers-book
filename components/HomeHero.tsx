@@ -33,7 +33,7 @@ const navItem = {
 
 const HomeHero = () => {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-white px-4 pt-10 sm:px-6 lg:px-10">
+    <section className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-white px-4 pt-10 pb-8 sm:px-6 sm:pb-10 lg:items-center lg:px-10 lg:pb-0">
       {/* Main hero image */}
       <motion.div
         className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center"
@@ -46,14 +46,15 @@ const HomeHero = () => {
           alt="Happy Hoppers Books"
           width={1120}
           height={672}
-          priority
+          preload
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 92vw, 980px"
           className="h-auto w-full max-w-[980px]"
         />
       </motion.div>
 
       {/* Divider + character images */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-[4.8rem] z-10 px-4 sm:px-8 lg:px-10">
-        <div className="relative mx-auto">
+      <div className="pointer-events-none relative z-10 mt-2 w-full px-2 sm:mt-3 sm:px-4 lg:absolute lg:inset-x-0 lg:bottom-[4.8rem] lg:mt-0 lg:px-10">
+        <div className="relative mx-auto max-w-6xl">
           {/* Animated divider line */}
           <motion.div
             className="h-px w-full bg-[#9fe7fb]"
@@ -64,7 +65,7 @@ const HomeHero = () => {
 
           {/* Left character */}
           <motion.div
-            className="absolute bottom-[-8px] left-50"
+            className="absolute bottom-[-8px] left-[8%] sm:left-[12%] lg:left-50"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
@@ -74,13 +75,14 @@ const HomeHero = () => {
               alt="Happy Hoppers character"
               width={120}
               height={92}
-              className="h-auto w-[72px] sm:w-[92px] lg:w-[112px]"
+              sizes="(max-width: 640px) 56px, (max-width: 1024px) 92px, 112px"
+              className="h-auto w-[56px] sm:w-[92px] lg:w-[112px]"
             />
           </motion.div>
 
           {/* Faded background character */}
           <motion.div
-            className="absolute bottom-[-96px] right-[26%] hidden md:block"
+            className="absolute bottom-[-56px] right-[20%] opacity-20 sm:bottom-[-78px] sm:right-[24%] lg:bottom-[-96px] lg:right-[26%]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.2 }}
             transition={{ duration: 1, delay: 0.8 }}
@@ -91,13 +93,14 @@ const HomeHero = () => {
               width={184}
               height={282}
               aria-hidden
-              className="h-auto w-[68px] lg:w-[184px]"
+              sizes="(max-width: 640px) 52px, (max-width: 1024px) 68px, 184px"
+              className="h-auto w-[52px] sm:w-[68px] lg:w-[184px]"
             />
           </motion.div>
 
           {/* Right character */}
           <motion.div
-            className="absolute bottom-[-72px] right-80"
+            className="absolute bottom-[-28px] right-[8%] sm:bottom-[-56px] sm:right-[18%] lg:bottom-[-72px] lg:right-80"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.75, ease: "easeOut" }}
@@ -107,19 +110,20 @@ const HomeHero = () => {
               alt="Happy Hoppers character"
               width={184}
               height={282}
-              className="h-auto w-[74px] sm:w-[92px] lg:w-[158px]"
+              sizes="(max-width: 640px) 56px, (max-width: 1024px) 92px, 158px"
+              className="h-auto w-[56px] sm:w-[92px] lg:w-[158px]"
             />
           </motion.div>
         </div>
       </div>
 
       {/* Nav + cart */}
-      <div className="absolute inset-x-0 bottom-6 z-20 px-4 sm:px-6">
-        <div className="mx-auto flex max-w-6xl items-end justify-center gap-4 sm:gap-6 lg:gap-10">
+      <div className="relative z-20 mt-10 w-full px-3 sm:mt-12 sm:px-6 lg:absolute lg:inset-x-0 lg:bottom-6 lg:mt-0">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-4 sm:gap-5 lg:flex-row lg:items-end lg:gap-10">
           {/* Staggered nav links */}
           <motion.nav
             aria-label="Primary"
-            className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-[17px] text-[#143846] sm:text-[19px]"
+            className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-center text-[12px] text-[#143846] sm:gap-x-7 sm:gap-y-3 sm:text-[17px] lg:gap-x-10 lg:text-left lg:text-[19px]"
             variants={navContainer}
             initial="hidden"
             animate="show"

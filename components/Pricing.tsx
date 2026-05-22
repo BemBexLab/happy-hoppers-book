@@ -63,9 +63,9 @@ const ProductCard = ({
         />
       </motion.div>
 
-      <div className="flex flex-col items-center gap-3 px-4 py-4">
+      <div className="flex flex-col items-center gap-2 px-3 py-3 sm:gap-3 sm:px-4 sm:py-4">
         <motion.p
-          className="text-center text-2xl font-medium text-[#1a1a1a] lg:text-3xl"
+          className="text-center text-lg font-medium text-[#1a1a1a] sm:text-xl md:text-2xl lg:text-3xl"
           variants={cardItemVariant}
         >
           Buy Series of 8{" "}
@@ -73,8 +73,8 @@ const ProductCard = ({
         </motion.p>
 
         <motion.div className="flex items-center gap-3" variants={cardItemVariant}>
-          <span className="text-2xl font-bold text-[#2a9d2a] lg:text-3xl">{price}</span>
-          <span className="text-lg text-gray-400 line-through lg:text-xl">{original}</span>
+          <span className="text-lg font-bold text-[#2a9d2a] sm:text-xl md:text-2xl lg:text-3xl">{price}</span>
+          <span className="text-sm text-gray-400 line-through sm:text-base md:text-lg lg:text-xl">{original}</span>
         </motion.div>
 
         <motion.div
@@ -99,7 +99,7 @@ const ProductCard = ({
         </motion.div>
 
         <motion.button
-          className="w-full bg-[#97D700] py-3 text-lg font-semibold text-white"
+          className="w-full bg-[#97D700] py-2 text-base font-semibold text-white sm:py-3 sm:text-lg"
           variants={cardItemVariant}
           whileHover={{ backgroundColor: "#4cae4c", scale: 1.02 }}
           whileTap={{ scale: 0.97 }}
@@ -113,16 +113,16 @@ const ProductCard = ({
 
 const Pricing = () => {
   return (
-    <section className="bg-white px-6 py-10 lg:px-16">
+    <section className="bg-white px-4 py-6 sm:px-6 sm:py-8 md:px-8 lg:px-16 lg:py-10">
       <motion.div
-        className="mb-8 text-center"
+        className="mb-4 text-center sm:mb-6 lg:mb-8"
         initial={{ opacity: 0, y: -24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <motion.p
-          className="text-xl font-bold text-[#2a3ccf] md:text-2xl lg:text-3xl"
+          className="text-base font-bold text-[#2a3ccf] sm:text-xl md:text-2xl lg:text-3xl"
           style={serifStyle}
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -132,7 +132,7 @@ const Pricing = () => {
           Buy the complete series of 8 Books to
         </motion.p>
         <motion.p
-          className="mt-2 text-2xl font-bold text-[#ff2eb3] md:text-3xl lg:text-4xl"
+          className="mt-2 text-xl font-bold text-[#ff2eb3] sm:text-2xl md:text-3xl lg:text-4xl"
           style={serifStyle}
           initial={{ opacity: 0, scale: 0.88 }}
           whileInView={{ opacity: 1, scale: 1 }}
