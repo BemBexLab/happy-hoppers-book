@@ -8,6 +8,7 @@ import Info from "@/components/Info";
 import Pricing from "@/components/Pricing";
 import Quotes from "@/components/Quotes";
 import TheHappyHoppers from "@/components/TheHappyHoppers";
+import TheHappyHoppersAdventures from "@/components/TheHappyHoppersAdventures";
 import ToySculptures from "@/components/ToySculptures";
 
 export default function Home() {
@@ -16,7 +17,8 @@ export default function Home() {
       <HomeHero />
       <HappyHoppersBooks />
       <Characters />
-      <ToySculptures />
+      <TheHappyHoppersAdventures />
+      {/* <ToySculptures /> */}
       <AboutAuthor />
       <Quotes />
       <TheHappyHoppers />

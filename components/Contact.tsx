@@ -17,7 +17,7 @@ const Contact = () => {
   return (
     <section className="bg-white py-10 overflow-hidden">
       <motion.h2
-        className="mb-15 text-center text-4xl italic text-[#ff1fa8] md:text-5xl"
+        className="mb-15 text-center text-4xl italic text-[#ff1fa8] md:text-6xl"
         style={serifStyle}
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}

@@ -24,7 +24,7 @@ const AboutAuthor = () => {
 
       <div className="relative z-10 flex min-h-screen flex-col px-6 py-4 sm:py-6 lg:px-12 lg:py-8">
         <motion.h2
-          className="pt-5 text-center text-[42px] italic leading-none text-[#ff1fa8] sm:pt-8 lg:pt-10 lg:text-[52px]"
+          className="pt-5 text-center text-4xl italic leading-none text-[#ff1fa8] sm:pt-8 lg:pt-10 lg:text-6xl"
           style={serifStyle}
           variants={headingContainer}
           initial="hidden"

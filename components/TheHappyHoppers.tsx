@@ -14,7 +14,7 @@ const TheHappyHoppers = () => {
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <p className="text-xl leading-snug sm:text-2xl md:text-3xl lg:text-4xl">
+        <p className="text-xl leading-snug sm:text-2xl md:text-4xl lg:text-6xl">
           <motion.span
             className="italic text-[#ff2eb3]"
             style={serifStyle}
@@ -38,7 +38,7 @@ const TheHappyHoppers = () => {
         </p>
 
         <motion.p
-          className="mt-2 text-xl font-bold uppercase tracking-wide text-[#2a3ccf] sm:text-2xl md:text-3xl lg:text-4xl"
+          className="mt-2 text-xl font-bold uppercase tracking-wide text-[#2a3ccf] sm:text-2xl md:text-4xl lg:text-6xl"
           style={serifStyle}
           initial={{ opacity: 0, scale: 0.88 }}
           whileInView={{ opacity: 1, scale: 1 }}

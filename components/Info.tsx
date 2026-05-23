@@ -29,7 +29,7 @@ const Info = () => {
   return (
     <section className="bg-white px-4 pb-8 pt-6 sm:px-6 sm:pt-8 md:px-10 lg:px-16 lg:pb-0 lg:pt-10">
       <motion.h2
-        className="mb-4 text-center text-3xl italic text-[#ff1fa8] sm:mb-6 sm:text-4xl md:text-5xl lg:mb-8"
+        className="mb-4 text-center text-3xl italic text-[#ff1fa8] sm:mb-6 sm:text-4xl md:text-6xl lg:mb-8"
         style={serifStyle}
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -53,12 +53,12 @@ const Info = () => {
             width={0}
             height={0}
             sizes="(max-width: 1024px) 90vw, 58vw"
-            style={{ width: "95%", height: "auto", display: "block" }}
+            style={{ width: "78%", height: "auto", display: "block" }}
           />
         </motion.div>
 
         <motion.div
-          className="flex flex-col items-center gap-4 py-6 sm:gap-6 sm:py-8 lg:py-4"
+          className="flex flex-col items-center gap-5 py-6 sm:gap-7 sm:py-8 lg:py-4"
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.2 }}
@@ -68,31 +68,31 @@ const Info = () => {
             <Image
               src="/Rectangle 83.png"
               alt="Happy Hoppers Books Logo"
-              width={175}
-              height={175}
+              width={220}
+              height={220}
               className="object-contain"
             />
           </div>
 
           <div className="text-center">
-            <p className="text-lg font-bold italic text-[#2a9d2a] sm:text-xl md:text-2xl" style={serifStyle}>
+            <p className="text-xl font-bold italic text-[#2a9d2a] sm:text-2xl md:text-3xl" style={serifStyle}>
               WEBSITE
             </p>
-            <p className="text-xs text-[#2e2e2e] sm:text-sm md:text-base">www.happyhoppersbooks.com</p>
+            <p className="text-sm text-[#2e2e2e] sm:text-base md:text-lg">www.happyhoppersbooks.com</p>
           </div>
 
           <div className="text-center">
-            <p className="text-lg font-bold italic text-[#2a9d2a] sm:text-xl md:text-2xl" style={serifStyle}>
+            <p className="text-xl font-bold italic text-[#2a9d2a] sm:text-2xl md:text-3xl" style={serifStyle}>
               email
             </p>
-            <p className="text-xs text-[#2e2e2e] sm:text-sm md:text-base">HappyHoppersBooks@gmail.com</p>
+            <p className="text-sm text-[#2e2e2e] sm:text-base md:text-lg">HappyHoppersBooks@gmail.com</p>
           </div>
 
           <div className="flex flex-col items-center gap-3">
-            <p className="text-lg font-bold italic text-[#2a9d2a] sm:text-xl md:text-2xl" style={serifStyle}>
+            <p className="text-xl font-bold italic text-[#2a9d2a] sm:text-2xl md:text-3xl" style={serifStyle}>
               social media
             </p>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-4">
               <SocialIcon href="#" label="Tumblr" bg="#35465c">
                 <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
                   <path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.058 2.371h.048c.19-.005.353-.037.5-.014.831.084 1.272.776 1.272 1.522 0 .555-.3 1.007-.73 1.289-.442.29-1.131.615-2.082.615z" />
@@ -116,7 +116,7 @@ const Info = () => {
             </div>
           </div>
 
-          <p className="text-center text-xs text-[#2e2e2e] sm:text-sm md:text-base">
+          <p className="text-center text-sm text-[#2e2e2e] sm:text-base md:text-lg">
             No Tax, Shipping Cost or Returns
           </p>
         </motion.div>

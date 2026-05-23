@@ -36,7 +36,7 @@ const Characters = () => {
           />
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           className="mx-auto mt-6 max-w-7xl text-center sm:mt-8 lg:mt-8"
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -74,7 +74,7 @@ const Characters = () => {
               adventures series!
             </motion.span>
           </p>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

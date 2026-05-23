@@ -122,7 +122,7 @@ const Pricing = () => {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <motion.p
-          className="text-base font-bold text-[#2a3ccf] sm:text-xl md:text-2xl lg:text-3xl"
+          className="text-base font-bold text-[#2a3ccf] sm:text-xl md:text-4xl lg:text-6xl"
           style={serifStyle}
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -132,7 +132,7 @@ const Pricing = () => {
           Buy the complete series of 8 Books to
         </motion.p>
         <motion.p
-          className="mt-2 text-xl font-bold text-[#ff2eb3] sm:text-2xl md:text-3xl lg:text-4xl"
+          className="mt-2 text-xl font-bold text-[#ff2eb3] sm:text-2xl md:text-4xl lg:text-6xl"
           style={serifStyle}
           initial={{ opacity: 0, scale: 0.88 }}
           whileInView={{ opacity: 1, scale: 1 }}
