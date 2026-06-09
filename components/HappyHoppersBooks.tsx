@@ -4,17 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { serifStyle } from "@/lib/motion";
-
-const books = [
-  { title: "Curious Visitors", href: "/", src: "/Rectangle 71.png" },
-  { title: "A Musical Surprise", href: "/", src: "/Rectangle 72.png" },
-  { title: "Delicious Treats", href: "/", src: "/Rectangle 73.png" },
-  { title: "Thrill Of Exercise", href: "/", src: "/Rectangle 74.png" },
-  { title: "Power Of Thought", href: "/", src: "/Rectangle 75.png" },
-  { title: "Dreams Come True", href: "/", src: "/Rectangle 76.png" },
-  { title: "Creative Discovery", href: "/", src: "/Rectangle 77.png" },
-  { title: "Love & Be Loved", href: "/", src: "/Rectangle 78.png" },
-];
+import { books } from "@/app/books/data";
 
 const gridContainer = {
   hidden: {},
@@ -96,7 +86,10 @@ const HappyHoppersBooks = () => {
                 whileTap={{ scale: 0.97 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <Link href={book.href} className="group mx-auto block w-full max-w-[340px] rounded-[2px] sm:max-w-none">
+                <Link
+                  href={`/books/${book.slug}`}
+                  className="group mx-auto block w-full max-w-[340px] rounded-[2px] sm:max-w-none"
+                >
                   <div className="overflow-hidden border border-[#4f5d61] bg-white shadow-[0_0_0_1px_rgba(255,255,255,0.2)]">
                     <motion.div
                       className="relative aspect-[0.72] w-full overflow-hidden bg-white"
@@ -104,7 +97,7 @@ const HappyHoppersBooks = () => {
                       transition={{ duration: 0.4, ease: "easeOut" }}
                     >
                       <Image
-                        src={book.src}
+                        src={book.listingImageSrc}
                         alt={book.title}
                         fill
                         sizes="(max-width: 640px) min(340px, 92vw), (max-width: 1024px) 44vw, 220px"

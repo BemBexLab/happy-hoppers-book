@@ -1,19 +1,21 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { PiShoppingCart } from "react-icons/pi";
 
 const navItems = [
-  { label: "Books", href: "/" },
-  { label: "Characters", href: "/" },
-  { label: "Toy Sculptures", href: "/" },
-  { label: "Author", href: "/" },
-  { label: "Quotes", href: "/" },
-  { label: "Volume Discounts", href: "/" },
-  { label: "Connect", href: "/" },
-  { label: "Info", href: "/" },
+  { label: "Home", href: "/" },
+  { label: "Books", href: "/books" },
+  { label: "Characters", href: "/characters" },
+  { label: "Toy Sculptures", href: "/toy-sculptures" },
+  { label: "Author", href: "/author" },
+  { label: "Quotes", href: "/quotes" },
+  { label: "Volume Discounts", href: "/volume-discounts" },
+  { label: "Connect", href: "/connect" },
+  { label: "Info", href: "/info" },
 ];
 
 const navContainer = {
@@ -28,10 +30,16 @@ const navContainer = {
 
 const navItem = {
   hidden: { opacity: 0, y: 12 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" as const } },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, ease: "easeOut" as const },
+  },
 };
 
 const HomeHero = () => {
+  const [activeItem, setActiveItem] = useState("Home");
+
   return (
     <section className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-white px-4 pt-10 pb-8 sm:px-6 sm:pb-10 lg:items-center lg:px-10 lg:pb-0">
       {/* Main hero image */}
@@ -41,15 +49,17 @@ const HomeHero = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <Image
-          src="/Rectangle 1.png"
-          alt="Happy Hoppers Books"
-          width={1120}
-          height={672}
-          preload
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 92vw, 980px"
-          className="h-auto w-full max-w-[980px]"
-        />
+        <Link href="/" className="h-auto w-full max-w-[980px]">
+          <Image
+            src="/Rectangle 1.png"
+            alt="Happy Hoppers Books"
+            width={1120}
+            height={672}
+            preload
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 92vw, 980px"
+            className="h-auto w-full max-w-[980px]"
+          />
+        </Link>
       </motion.div>
 
       {/* Divider + character images */}
@@ -132,8 +142,9 @@ const HomeHero = () => {
               <motion.div key={item.label} variants={navItem}>
                 <Link
                   href={item.href}
+                  onClick={() => setActiveItem(item.label)}
                   className={`transition-colors hover:opacity-70 ${
-                    item.label === "Books" ? "text-[#67d4ff]" : "text-[#173846]"
+                    item.label === activeItem ? "text-[#67d4ff]" : "text-black"
                   }`}
                 >
                   {item.label}

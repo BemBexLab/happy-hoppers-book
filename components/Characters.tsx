@@ -6,7 +6,7 @@ import { serifStyle } from "@/lib/motion";
 
 const Characters = () => {
   return (
-    <section className="bg-white px-4 pb-10 pt-10 sm:px-6 sm:pb-12 sm:pt-16 lg:px-8 lg:pt-22">
+    <section className="bg-white px-4 pb-10 pt-5 sm:px-6 sm:pb-12 lg:px-8">
       <div className="mx-auto max-w-8xl">
         <motion.h2
           className="text-center text-[28px] lowercase tracking-tight text-[#ff1fa8] sm:text-4xl lg:text-6xl"
