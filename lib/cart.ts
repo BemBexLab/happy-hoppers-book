@@ -11,6 +11,7 @@ export type CheckoutCartItem = {
   quantity: number;
   src: string;
   slug: string;
+  href?: string;
 };
 
 export type ShippingDetails = {

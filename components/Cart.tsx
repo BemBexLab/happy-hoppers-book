@@ -385,7 +385,7 @@ const Cart = () => {
 
                     <div className="flex flex-col gap-3 sm:flex-row">
                       <Link
-                        href={`/books/${item.slug}`}
+                        href={item.href ?? `/books/${item.slug}`}
                         className="rounded-full border border-[#153f48] px-5 py-2 text-sm font-semibold text-[#153f48] transition-colors hover:bg-[#153f48] hover:text-white"
                       >
                         View Book

@@ -48,6 +48,7 @@ const ProductCard = ({
   const handleAddToCart = () => {
     addItem({
       slug: "complete-series",
+      href: "/volume-discounts",
       title: "Happy Hoppers Complete Series",
       bookLabel: "Series of 8",
       format: label,
