@@ -5,6 +5,7 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { serifStyle } from "@/lib/motion";
 import type { Book, BookProduct } from "@/app/books/data";
+import { useCart } from "@/components/CartProvider";
 
 const gridContainer = {
   hidden: {},
@@ -37,11 +38,29 @@ const cardItemVariant = {
 
 type ProductCardProps = {
   heading: string;
+  book: Book;
   product: BookProduct;
 };
 
-const ProductCard = ({ heading, product }: ProductCardProps) => {
+const ProductCard = ({ heading, book, product }: ProductCardProps) => {
   const [qty, setQty] = useState(1);
+  const [justAdded, setJustAdded] = useState(false);
+  const { addItem } = useCart();
+
+  const handleAddToCart = () => {
+    addItem({
+      slug: book.slug,
+      title: book.title,
+      bookLabel: book.bookLabel,
+      format: product.label,
+      price: product.price,
+      original: product.original,
+      quantity: qty,
+      src: book.detailImageSrc,
+    });
+    setJustAdded(true);
+    window.setTimeout(() => setJustAdded(false), 1200);
+  };
 
   return (
     <motion.div
@@ -104,12 +123,13 @@ const ProductCard = ({ heading, product }: ProductCardProps) => {
         </motion.div>
 
         <motion.button
+          onClick={handleAddToCart}
           className="w-full bg-[#97D700] py-2 text-base font-semibold text-white sm:py-3 sm:text-lg"
           variants={cardItemVariant}
           whileHover={{ backgroundColor: "#4cae4c", scale: 1.02 }}
           whileTap={{ scale: 0.97 }}
         >
-          Add to Cart
+          {justAdded ? "Added to Cart" : "Add to Cart"}
         </motion.button>
       </div>
     </motion.div>
@@ -198,6 +218,7 @@ const BookDetailView = ({ book }: BookDetailViewProps) => {
           <ProductCard
             key={product.label}
             heading={`Buy ${book.bookLabel}`}
+            book={book}
             product={product}
           />
         ))}

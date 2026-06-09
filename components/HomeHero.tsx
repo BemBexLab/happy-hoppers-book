@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { PiShoppingCart } from "react-icons/pi";
+import { useCart } from "@/components/CartProvider";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -39,6 +40,7 @@ const navItem = {
 
 const HomeHero = () => {
   const [activeItem, setActiveItem] = useState("Home");
+  const { itemCount } = useCart();
 
   return (
     <section className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-white px-4 pt-10 pb-8 sm:px-6 sm:pb-10 lg:items-center lg:px-10 lg:pb-0">
@@ -155,17 +157,22 @@ const HomeHero = () => {
 
           {/* Cart */}
           <motion.div
-            className="flex items-center gap-1 pb-0.5 text-[#173846]"
             initial={{ opacity: 0, x: 16 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 1.6, ease: "easeOut" }}
           >
-            <span className="text-[26px] leading-none">
-              <PiShoppingCart />
-            </span>
-            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#173846] text-base font-semibold text-white">
-              0
-            </span>
+            <Link
+              href="/cart"
+              aria-label="Open cart"
+              className="flex items-center gap-1 pb-0.5 text-[#173846] transition-transform hover:scale-[1.03]"
+            >
+              <span className="text-[26px] leading-none">
+                <PiShoppingCart />
+              </span>
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#173846] text-base font-semibold text-white">
+                {itemCount}
+              </span>
+            </Link>
           </motion.div>
         </div>
       </div>

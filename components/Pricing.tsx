@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { motion } from "motion/react";
 import { serifStyle } from "@/lib/motion";
+import { useCart } from "@/components/CartProvider";
 
 const products = [
   { label: "Hardcover Books", price: "$180.00", original: "$200.00", src: "/Rectangle 82.png" },
@@ -41,6 +42,23 @@ const ProductCard = ({
   label: string; price: string; original: string; src: string;
 }) => {
   const [qty, setQty] = useState(1);
+  const [justAdded, setJustAdded] = useState(false);
+  const { addItem } = useCart();
+
+  const handleAddToCart = () => {
+    addItem({
+      slug: "complete-series",
+      title: "Happy Hoppers Complete Series",
+      bookLabel: "Series of 8",
+      format: label,
+      price,
+      original,
+      quantity: qty,
+      src,
+    });
+    setJustAdded(true);
+    window.setTimeout(() => setJustAdded(false), 1200);
+  };
 
   return (
     <motion.div
@@ -99,12 +117,13 @@ const ProductCard = ({
         </motion.div>
 
         <motion.button
+          onClick={handleAddToCart}
           className="w-full bg-[#97D700] py-2 text-base font-semibold text-white sm:py-3 sm:text-lg"
           variants={cardItemVariant}
           whileHover={{ backgroundColor: "#4cae4c", scale: 1.02 }}
           whileTap={{ scale: 0.97 }}
         >
-          Add to Cart
+          {justAdded ? "Added to Cart" : "Add to Cart"}
         </motion.button>
       </div>
     </motion.div>
