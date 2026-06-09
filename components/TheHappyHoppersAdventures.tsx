@@ -88,7 +88,7 @@ const TheHappyHoppersAdventures = () => {
           viewport={{ once: true, amount: 0.7 }}
           transition={{ duration: 0.75, ease: "easeOut" }}
         >
-          <span className="lowercase text-[#ff1fa8]">the happy hoppers </span>
+          <span className="text-[#ff1fa8]">The happy hoppers </span>
           <span className="lowercase text-[#2832bb]">adventures series!</span>
         </motion.h2>
 

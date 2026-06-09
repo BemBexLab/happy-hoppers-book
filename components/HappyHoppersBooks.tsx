@@ -53,8 +53,8 @@ const HappyHoppersBooks = () => {
               Happy Hoppers Books
             </p>
             <h2 className="mt-2 text-[32px] leading-[0.95] sm:text-[46px] lg:text-6xl">
-              <span className="lowercase tracking-tight text-[#ff2eb3]" style={serifStyle}>
-                the happy hoppers
+              <span className="tracking-tight text-[#ff2eb3]" style={serifStyle}>
+                The happy hoppers
               </span>{" "}
               <span className="font-semibold lowercase tracking-tight text-[#2a3ccf]" style={serifStyle}>
                 adventures series
@@ -67,7 +67,7 @@ const HappyHoppersBooks = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              click on books
+              Click on books
             </motion.p>
           </motion.div>
 
@@ -117,7 +117,7 @@ const HappyHoppersBooks = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            click on books
+            Click on books
           </motion.p>
         </div>
       </section>

@@ -297,7 +297,7 @@ const Cart = () => {
             className="mt-2 text-[34px] leading-[0.95] sm:text-[46px] lg:text-6xl"
             style={serifStyle}
           >
-            <span className="lowercase text-[#ff2eb3]">happy hoppers </span>
+            <span className=" text-[#ff2eb3]">Happy hoppers </span>
             <span className="lowercase font-semibold text-[#2a3ccf]">checkout corner</span>
           </h1>
           <p className="mt-5 text-[15px] text-[#2e2e2e] sm:text-[18px] lg:text-[20px]">
@@ -417,7 +417,7 @@ const Cart = () => {
               className="mt-3 text-[34px] leading-[0.95] text-[#2832bb]"
               style={serifStyle}
           >
-              ready to hop ahead?
+              Ready to hop ahead?
             </h2>
 
             <div className="mt-6 space-y-4 rounded-[24px] bg-[#f9feff] p-4 sm:p-5">

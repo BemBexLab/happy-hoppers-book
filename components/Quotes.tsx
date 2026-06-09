@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import { serifStyle, makeTypewriterVariants, fadeUp, fromLeft, fromRight } from "@/lib/motion";
 
 const { container: headingContainer, char: charVariant } = makeTypewriterVariants(0.08, 0.1);
-const headingChars = "quotes".split("");
+const headingChars = "Quotes".split("");
 
 const FADE_UP     = fadeUp(0);
 const FADE_UP_01  = fadeUp(0.1);

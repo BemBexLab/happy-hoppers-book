@@ -9,14 +9,14 @@ const Characters = () => {
     <section className="bg-white px-4 pb-10 pt-5 sm:px-6 sm:pb-12 lg:px-8">
       <div className="mx-auto max-w-8xl">
         <motion.h2
-          className="text-center text-[28px] lowercase tracking-tight text-[#ff1fa8] sm:text-4xl lg:text-6xl"
+          className="text-center text-[28px] tracking-tight text-[#ff1fa8] sm:text-4xl lg:text-6xl"
           style={serifStyle}
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          characters
+          Characters
         </motion.h2>
 
         <motion.div

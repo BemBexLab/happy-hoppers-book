@@ -36,7 +36,7 @@ const Info = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        info
+        Info
       </motion.h2>
 
       <div className="grid grid-cols-1 items-center lg:grid-cols-[58%_42%]">
@@ -76,21 +76,21 @@ const Info = () => {
 
           <div className="text-center">
             <p className="text-xl font-bold italic text-[#2a9d2a] sm:text-2xl md:text-3xl" style={serifStyle}>
-              WEBSITE
+              Website
             </p>
-            <p className="text-sm text-[#2e2e2e] sm:text-base md:text-lg">www.happyhoppersbooks.com</p>
+            <p className="text-sm text-[#2e2e2e] sm:text-base md:text-lg"><a href="http://www.happyhoppersbooks.com">www.happyhoppersbooks.com</a></p>
           </div>
 
           <div className="text-center">
             <p className="text-xl font-bold italic text-[#2a9d2a] sm:text-2xl md:text-3xl" style={serifStyle}>
-              email
+              Email
             </p>
-            <p className="text-sm text-[#2e2e2e] sm:text-base md:text-lg">HappyHoppersBooks@gmail.com</p>
+            <p className="text-sm text-[#2e2e2e] sm:text-base md:text-lg"><a href="mailto:happyhoppersbooks@gmail.com">HappyHoppersBooks@gmail.com</a></p>
           </div>
 
           <div className="flex flex-col items-center gap-3">
             <p className="text-xl font-bold italic text-[#2a9d2a] sm:text-2xl md:text-3xl" style={serifStyle}>
-              social media
+              Social Media
             </p>
             <div className="flex items-center gap-4">
               <SocialIcon href="#" label="Tumblr" bg="#35465c">

@@ -24,7 +24,7 @@ const Contact = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        connect
+        Connect
       </motion.h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-[45%_55%]">

@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 import { makeTypewriterVariants, serifStyle } from "@/lib/motion";
 
 const { container: containerVariants, char: charVariants } = makeTypewriterVariants(0.045, 0.6);
-const textChars = "toy sculptures coming soon!".split("");
+const textChars = "Toy sculptures coming soon!".split("");
 
 const ToySculptures = () => {
   return (

@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import { serifStyle, makeTypewriterVariants, fadeUp, fromLeft } from "@/lib/motion";
 
 const { container: headingContainer, char: charVariant } = makeTypewriterVariants(0.08, 0.2);
-const headingChars = "author".split("");
+const headingChars = "Author".split("");
 
 const FADE_UP_SUBTITLE = fadeUp(0.7, 24, 0.6);
 const FADE_LEFT_P1 = fromLeft(0.95, 30, 0.65, 0.3);

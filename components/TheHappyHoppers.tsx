@@ -23,7 +23,7 @@ const TheHappyHoppers = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.55, ease: "easeOut", delay: 0.15 }}
           >
-            the happy hoppers{" "}
+            The happy hoppers{" "}
           </motion.span>
           <motion.span
             className="font-bold uppercase tracking-wide text-[#2a3ccf]"
