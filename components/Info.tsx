@@ -66,7 +66,7 @@ const Info = () => {
         >
           <div className="border border-gray-400 p-1">
             <Image
-              src="/Rectangle 83.png"
+              src="/Runner Character logo.png"
               alt="Happy Hoppers Books Logo"
               width={220}
               height={220}
