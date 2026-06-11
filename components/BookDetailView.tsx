@@ -96,9 +96,6 @@ const ProductCard = ({ heading, book, product }: ProductCardProps) => {
           <span className="text-lg font-bold text-[#2a9d2a] sm:text-xl md:text-2xl lg:text-3xl">
             {product.price}
           </span>
-          <span className="text-sm text-gray-400 line-through sm:text-base md:text-lg lg:text-xl">
-            {product.original}
-          </span>
         </motion.div>
 
         <motion.div
@@ -166,8 +163,7 @@ const BookDetailView = ({ book }: BookDetailViewProps) => {
               {book.bookLabel}
             </p>
             <h1
-              className="mt-3 font-bold text-[#2a3ccf] text-4xl leading-[0.95] text-[#2832bb] sm:text-5xl lg:text-6xl"
-              style={serifStyle}
+              className="mt-3 font-bold text-[#2a3ccf] font-libra text-4xl leading-[0.95] text-[#2832bb] sm:text-5xl lg:text-6xl"
             >
               {book.title}
             </h1>
@@ -186,8 +182,8 @@ const BookDetailView = ({ book }: BookDetailViewProps) => {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <motion.p
-          className="text-base font-bold text-[#2a3ccf] sm:text-xl md:text-4xl lg:text-6xl"
-          style={serifStyle}
+          className="text-4xl font-libra font-bold text-[#2a3ccf]"
+          // style={serifStyle}
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -196,8 +192,8 @@ const BookDetailView = ({ book }: BookDetailViewProps) => {
           Buy {book.title} in your favorite format
         </motion.p>
         <motion.p
-          className="mt-2 text-xl font-bold text-[#ff2eb3] sm:text-2xl md:text-4xl lg:text-6xl"
-          style={serifStyle}
+          className="mt-2 font-libra text-4xl font-bold text-[#ff2eb3]"
+          // style={serifStyle}
           initial={{ opacity: 0, scale: 0.88 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}

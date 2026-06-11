@@ -92,7 +92,7 @@ const ProductCard = ({
         </motion.p>
 
         <motion.div className="flex items-center gap-3" variants={cardItemVariant}>
-          <span className="text-lg font-bold text-[#2a9d2a] sm:text-xl md:text-2xl lg:text-3xl">{price}</span>
+          <span className="text-lg  text-[#2a9d2a] sm:text-xl md:text-2xl lg:text-3xl">{price}</span>
           <span className="text-sm text-gray-400 line-through sm:text-base md:text-lg lg:text-xl">{original}</span>
         </motion.div>
 
@@ -142,8 +142,7 @@ const Pricing = () => {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <motion.p
-          className="text-base font-bold text-[#2a3ccf] sm:text-xl md:text-4xl lg:text-6xl"
-          style={serifStyle}
+          className="text-4xl font-libra  text-[#2a3ccf]"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -152,8 +151,7 @@ const Pricing = () => {
           Buy the complete series of 8 Books to
         </motion.p>
         <motion.p
-          className="mt-2 text-xl font-bold text-[#ff2eb3] sm:text-2xl md:text-4xl lg:text-6xl"
-          style={serifStyle}
+          className="mt-2 text-4xl font-libra  text-[#ff2eb3]"
           initial={{ opacity: 0, scale: 0.88 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}

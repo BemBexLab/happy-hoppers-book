@@ -1,17 +1,16 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
 import { PiShoppingCart } from "react-icons/pi";
 import { useCart } from "@/components/CartProvider";
 
 const navItems = [
-  { label: "Home", href: "/" },
   { label: "Books", href: "/books" },
   { label: "Characters", href: "/characters" },
-  { label: "Toy Sculptures", href: "/toy-sculptures" },
+  // { label: "Toy Sculptures", href: "/toy-sculptures" },
   { label: "Author", href: "/author" },
   { label: "Quotes", href: "/quotes" },
   { label: "Volume Discounts", href: "/volume-discounts" },
@@ -39,141 +38,127 @@ const navItem = {
 };
 
 const HomeHero = () => {
-  const [activeItem, setActiveItem] = useState("Home");
+  const pathname = usePathname();
   const { itemCount } = useCart();
 
   return (
-    <section className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-white px-4 pt-10 pb-8 sm:px-6 sm:pb-10 lg:items-center lg:px-10 lg:pb-0">
-      {/* Main hero image */}
+    <section className="relative overflow-hidden bg-white px-4 pt-6 pb-0 sm:px-6 sm:pt-8 lg:h-[590px] lg:px-0 lg:pt-[25px]">
+      {/* Centered logo artwork */}
       <motion.div
-        className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center"
-        initial={{ opacity: 0, scale: 0.94 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col items-center"
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
       >
-        <Link href="/" className="h-auto w-full max-w-[980px]">
+        <Link href="/" className="block w-full max-w-[760px] sm:max-w-[760px] lg:max-w-[721px]">
           <Image
-            src="/Rectangle 1.png"
+            src="/logo for header.avif"
             alt="Happy Hoppers Books"
             width={1120}
             height={672}
             preload
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 92vw, 980px"
-            className="h-auto w-full max-w-[980px]"
+            sizes="(max-width: 640px) 94vw, (max-width: 1024px) 72vw, 721px"
+            className="h-auto w-full"
           />
         </Link>
       </motion.div>
 
-      {/* Divider + character images */}
-      <div className="pointer-events-none relative z-10 mt-2 w-full px-2 sm:mt-3 sm:px-4 lg:absolute lg:inset-x-0 lg:bottom-[4.8rem] lg:mt-0 lg:px-10">
-        <div className="relative mx-auto max-w-6xl">
-          {/* Animated divider line */}
+      {/* Centered divider band with characters, nav, and cart */}
+      <div className="relative z-20 mx-auto mt-3 w-full pt-8 sm:pt-10 lg:absolute lg:inset-x-0 lg:bottom-0 lg:mt-0 lg:pt-0">
+        {/* Top divider line */}
+        <motion.div
+          className="absolute left-1/2 top-0 h-[2px] w-full -translate-x-1/2 bg-[#74D1EA]"
+          initial={{ scaleX: 0, originX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.9, delay: 0.35, ease: "easeInOut" }}
+        />
+
+        {/* Centered content that sits inside the full-width divider band */}
+        <div className="relative mx-auto w-full px-8 sm:px-12 lg:px-0">
+          {/* Left character sitting on the divider */}
           <motion.div
-            className="h-px w-full bg-[#9fe7fb]"
+            className="pointer-events-none absolute left-[12%] top-[-30px] sm:left-[13%] sm:top-[-38px] lg:left-[13.9%] lg:top-[-77px]"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.45, ease: "easeOut" }}
+          >
+            <Image
+              src="/9bed69_1280cd02f9e5413a97491919a46c85cd~mv2.avif"
+              alt="Happy Hoppers character"
+              width={124}
+              height={101}
+              sizes="(max-width: 640px) 78px, (max-width: 1024px) 96px, 124px"
+              className="h-auto w-[78px] sm:w-[96px] lg:w-[124px]"
+            />
+          </motion.div>
+
+          {/* Right character leaning over the divider */}
+          <motion.div
+            className="pointer-events-none absolute right-[7%] top-[-68px] sm:right-[8%] sm:top-[-88px] lg:right-[10.8%] lg:top-[-97px]"
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.52, ease: "easeOut" }}
+          >
+            <Image
+              src="/9bed69_1943854583374d1da016e4ec38449356~mv2.avif"
+              alt="Happy Hoppers character"
+              width={141}
+              height={171}
+              sizes="(max-width: 640px) 92px, (max-width: 1024px) 112px, 141px"
+              className="h-auto w-[92px] sm:w-[112px] lg:w-[141px]"
+            />
+          </motion.div>
+
+          {/* Navigation row and cart icon */}
+          <div className="relative flex flex-col items-center gap-4 pt-3 sm:gap-5 sm:pt-5 lg:flex-row lg:justify-center lg:gap-4 lg:pt-[28px]">
+            <motion.nav
+              aria-label="Primary"
+              className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-center text-[12px] tracking-[-0.01em] text-[#072f3f] sm:gap-x-7 sm:text-[15px] lg:flex-nowrap lg:gap-x-[55px] lg:text-[16px] lg:leading-none"
+              variants={navContainer}
+              initial="hidden"
+              animate="show"
+            >
+              {navItems.map((item) => (
+                <motion.div key={item.label} variants={navItem}>
+                  <Link
+                    href={item.href}
+                    className={`whitespace-nowrap transition-colors hover:opacity-70 ${
+                      pathname === item.href ? "text-[#74D1EA]" : "text-[#072f3f]"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.nav>
+
+            <motion.div
+              initial={{ opacity: 0, x: 16 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 1.1, ease: "easeOut" }}
+            >
+              <Link
+                href="/cart"
+                aria-label="Open cart"
+                className="flex items-center gap-1 text-[#072f3f] transition-transform hover:scale-[1.03]"
+              >
+                <span className="text-[30px] leading-none">
+                  <PiShoppingCart strokeWidth={0.8} />
+                </span>
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#072f3f] text-[15px] font-semibold text-white">
+                  {itemCount}
+                </span>
+              </Link>
+            </motion.div>
+          </div>
+
+          {/* Bottom divider line */}
+          <motion.div
+            className="mx-auto mt-7 hidden h-[2px] w-full bg-[#74D1EA] lg:block"
             initial={{ scaleX: 0, originX: 0 }}
             animate={{ scaleX: 1 }}
-            transition={{ duration: 0.9, delay: 0.5, ease: "easeInOut" }}
+            transition={{ duration: 0.9, delay: 0.45, ease: "easeInOut" }}
           />
-
-          {/* Left character */}
-          <motion.div
-            className="absolute bottom-[-8px] left-[8%] sm:left-[12%] lg:left-50"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
-          >
-            <Image
-              src="/9bed69_1280cd02f9e5413a97491919a46c85cd~mv2 2.png"
-              alt="Happy Hoppers character"
-              width={120}
-              height={92}
-              sizes="(max-width: 640px) 56px, (max-width: 1024px) 92px, 112px"
-              className="h-auto w-[56px] sm:w-[92px] lg:w-[112px]"
-            />
-          </motion.div>
-
-          {/* Faded background character */}
-          <motion.div
-            className="absolute bottom-[-56px] right-[20%] opacity-20 sm:bottom-[-78px] sm:right-[24%] lg:bottom-[-96px] lg:right-[26%]"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.2 }}
-            transition={{ duration: 1, delay: 0.8 }}
-          >
-            <Image
-              src="/9bed69_1943854583374d1da016e4ec38449356~mv2 1.png"
-              alt=""
-              width={184}
-              height={282}
-              aria-hidden
-              sizes="(max-width: 640px) 52px, (max-width: 1024px) 68px, 184px"
-              className="h-auto w-[52px] sm:w-[68px] lg:w-[184px]"
-            />
-          </motion.div>
-
-          {/* Right character */}
-          <motion.div
-            className="absolute bottom-[-28px] right-[8%] sm:bottom-[-56px] sm:right-[18%] lg:bottom-[-72px] lg:right-80"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.75, ease: "easeOut" }}
-          >
-            <Image
-              src="/9bed69_1943854583374d1da016e4ec38449356~mv2 1.png"
-              alt="Happy Hoppers character"
-              width={184}
-              height={282}
-              sizes="(max-width: 640px) 56px, (max-width: 1024px) 92px, 158px"
-              className="h-auto w-[56px] sm:w-[92px] lg:w-[158px]"
-            />
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Nav + cart */}
-      <div className="relative z-20 mt-10 w-full px-3 sm:mt-12 sm:px-6 lg:absolute lg:inset-x-0 lg:bottom-6 lg:mt-0">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-4 sm:gap-5 lg:flex-row lg:items-end lg:gap-10">
-          {/* Staggered nav links */}
-          <motion.nav
-            aria-label="Primary"
-            className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-center text-[12px] text-[#143846] sm:gap-x-7 sm:gap-y-3 sm:text-[17px] lg:gap-x-10 lg:text-left lg:text-[19px]"
-            variants={navContainer}
-            initial="hidden"
-            animate="show"
-          >
-            {navItems.map((item) => (
-              <motion.div key={item.label} variants={navItem}>
-                <Link
-                  href={item.href}
-                  onClick={() => setActiveItem(item.label)}
-                  className={`transition-colors hover:opacity-70 ${
-                    item.label === activeItem ? "text-[#67d4ff]" : "text-black"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              </motion.div>
-            ))}
-          </motion.nav>
-
-          {/* Cart */}
-          <motion.div
-            initial={{ opacity: 0, x: 16 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 1.6, ease: "easeOut" }}
-          >
-            <Link
-              href="/cart"
-              aria-label="Open cart"
-              className="flex items-center gap-1 pb-0.5 text-[#173846] transition-transform hover:scale-[1.03]"
-            >
-              <span className="text-[26px] leading-none">
-                <PiShoppingCart />
-              </span>
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#173846] text-base font-semibold text-white">
-                {itemCount}
-              </span>
-            </Link>
-          </motion.div>
         </div>
       </div>
     </section>

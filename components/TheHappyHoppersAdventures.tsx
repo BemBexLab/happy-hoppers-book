@@ -81,8 +81,7 @@ const TheHappyHoppersAdventures = () => {
     <section className="bg-white px-4 pb-8 pt-4 sm:px-[24px] sm:pb-10 lg:px-[28px] lg:pb-12">
       <div className="mx-auto max-w-[1508px]">
         <motion.h2
-          className="mb-6 text-center text-[28px] leading-[0.95] tracking-[-0.02em] sm:mb-8 sm:text-4xl lg:text-6xl"
-          style={serifStyle}
+          className="mb-6 text-center font-libra text-[38px] leading-[0.95] tracking-[-0.02em] sm:mb-8"
           initial={{ opacity: 0, y: -28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.7 }}
@@ -125,8 +124,8 @@ const TheHappyHoppersAdventures = () => {
               >
                 <Link href={`/books/${book.slug}`} className="block">
                   <h3
-                    className="text-[22px] leading-[0.92] tracking-[-0.02em] sm:text-[28px] lg:text-[34px]"
-                    style={serifStyle}
+                    className="text-[22px] leading-[0.92] tracking-[-0.02em]"
+                    // style={serifStyle}
                   >
                     <span className="uppercase text-[#98c73a]">{book.title}</span><br />
                     <span className="text-[#ff1fa8]"> ~ {book.bookLabel}</span>

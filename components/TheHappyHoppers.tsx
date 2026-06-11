@@ -14,10 +14,9 @@ const TheHappyHoppers = () => {
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <p className="text-xl leading-snug sm:text-2xl md:text-4xl lg:text-6xl">
+        <p className="text-4xl font-libra leading-snug">
           <motion.span
-            className="italic text-[#ff2eb3]"
-            style={serifStyle}
+            className="text-[#ff2eb3]"
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -26,8 +25,7 @@ const TheHappyHoppers = () => {
             The happy hoppers{" "}
           </motion.span>
           <motion.span
-            className="font-bold uppercase tracking-wide text-[#2a3ccf]"
-            style={serifStyle}
+            className=" uppercase tracking-wide text-[#2a3ccf]"
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -38,8 +36,7 @@ const TheHappyHoppers = () => {
         </p>
 
         <motion.p
-          className="mt-2 text-xl font-bold uppercase tracking-wide text-[#2a3ccf] sm:text-2xl md:text-4xl lg:text-6xl"
-          style={serifStyle}
+          className="mt-2 text-4xl font-libra uppercase tracking-wide text-[#2a3ccf]"
           initial={{ opacity: 0, scale: 0.88 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}

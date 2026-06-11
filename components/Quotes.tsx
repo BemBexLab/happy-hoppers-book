@@ -28,8 +28,7 @@ const Quotes = () => {
 
       <div className="relative z-10 h-full overflow-y-auto px-6 py-10 lg:px-16">
         <motion.h2
-          className="mb-15 text-center text-4xl italic text-[#ff1fa8] md:text-5xl xl:text-6xl"
-          style={serifStyle}
+          className="mb-15 text-center font-libra text-4xl text-[#ff1fa8]"
           variants={headingContainer}
           initial="hidden"
           whileInView="show"

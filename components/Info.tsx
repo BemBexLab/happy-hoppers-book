@@ -29,14 +29,13 @@ const Info = () => {
   return (
     <section className="bg-white px-4 pb-8 pt-6 sm:px-6 sm:pt-8 md:px-10 lg:px-16 lg:pb-0 lg:pt-10">
       <motion.h2
-        className="mb-4 text-center text-3xl italic text-[#ff1fa8] sm:mb-6 sm:text-4xl md:text-6xl lg:mb-8"
-        style={serifStyle}
+        className="mb-4 text-center text-4xl font-libra text-[#ff1fa8] sm:mb-6 lg:mb-8"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        Info
+        info
       </motion.h2>
 
       <div className="grid grid-cols-1 items-center lg:grid-cols-[58%_42%]">
@@ -48,17 +47,17 @@ const Info = () => {
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
         >
           <Image
-            src="/image 46.png"
+            src="/Book 8 illustrations-29-2.avif"
             alt="Happy Hoppers characters group"
             width={0}
             height={0}
             sizes="(max-width: 1024px) 90vw, 58vw"
-            style={{ width: "78%", height: "auto", display: "block" }}
+            style={{ width: "100%", height: "auto", display: "block" }}
           />
         </motion.div>
 
         <motion.div
-          className="flex flex-col items-center gap-5 py-6 sm:gap-7 sm:py-8 lg:py-4"
+          className="flex flex-col items-center gap-5 py-6 sm:gap-7 sm:py-8 lg:-ml-40 lg:py-4"
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.2 }}
@@ -75,21 +74,21 @@ const Info = () => {
           </div>
 
           <div className="text-center">
-            <p className="text-xl font-bold italic text-[#2a9d2a] sm:text-2xl md:text-3xl" style={serifStyle}>
+            <p className="text-xl font-libra text-[#1061D7] sm:text-2xl md:text-3xl">
               Website
             </p>
             <p className="text-sm text-[#2e2e2e] sm:text-base md:text-lg"><a href="http://www.happyhoppersbooks.com">www.happyhoppersbooks.com</a></p>
           </div>
 
           <div className="text-center">
-            <p className="text-xl font-bold italic text-[#2a9d2a] sm:text-2xl md:text-3xl" style={serifStyle}>
+            <p className="text-xl font-libra text-[#FF009B] sm:text-2xl md:text-3xl">
               Email
             </p>
             <p className="text-sm text-[#2e2e2e] sm:text-base md:text-lg"><a href="mailto:happyhoppersbooks@gmail.com">HappyHoppersBooks@gmail.com</a></p>
           </div>
 
           <div className="flex flex-col items-center gap-3">
-            <p className="text-xl font-bold italic text-[#2a9d2a] sm:text-2xl md:text-3xl" style={serifStyle}>
+            <p className="text-xl font-libra text-[#1061D7] sm:text-2xl md:text-3xl">
               Social Media
             </p>
             <div className="flex items-center gap-4">
