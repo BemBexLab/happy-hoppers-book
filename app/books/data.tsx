@@ -1,8 +1,11 @@
+import { getProductGallery } from "@/lib/product-galleries";
+
 export type BookProduct = {
   label: string;
   price: string;
   original: string;
   src: string;
+  gallery: string[];
 };
 
 export type Book = {
@@ -21,24 +24,28 @@ const defaultProducts: BookProduct[] = [
     price: "$25.00",
     original: "$25.00",
     src: "/Rectangle 82.png",
+    gallery: getProductGallery("Hardcover Books"),
   },
   {
     label: "Video Books",
     price: "$20.00",
     original: "$20.00",
     src: "/Rectangle 82.png",
+    gallery: getProductGallery("Video Books"),
   },
   {
     label: "Ebooks",
     price: "$15.00",
     original: "$15.00",
     src: "/Rectangle 82.png",
+    gallery: getProductGallery("Ebooks"),
   },
   {
     label: "Audio Books",
     price: "$10.00",
     original: "$10.00",
     src: "/Rectangle 82.png",
+    gallery: getProductGallery("Audio Books"),
   },
 ];
 
@@ -57,24 +64,28 @@ export const books: Book[] = [
         price: "$25.00",
         original: "$25.00",
         src: "/Rectangle 82.png",
+        gallery: getProductGallery("Hardcover Books"),
       },
       {
         label: "Video Books",
         price: "$20.00",
         original: "$20.00",
         src: "/Rectangle 82.png",
+        gallery: getProductGallery("Video Books"),
       },
       {
         label: "Ebooks",
         price: "$15.00",
         original: "$15.00",
         src: "/Rectangle 82.png",
+        gallery: getProductGallery("Ebooks"),
       },
       {
         label: "Audio Books",
         price: "$10.00",
         original: "$10.00",
         src: "/Rectangle 82.png",
+        gallery: getProductGallery("Audio Books"),
       },
     ],
   },

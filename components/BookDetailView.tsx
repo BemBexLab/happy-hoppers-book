@@ -42,9 +42,119 @@ type ProductCardProps = {
   product: BookProduct;
 };
 
+const GalleryModal = ({
+  label,
+  gallery,
+  onClose,
+}: {
+  label: string;
+  gallery: string[];
+  onClose: () => void;
+}) => {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const currentImage = gallery[selectedIndex];
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-[#0b0b14]/80 p-3 backdrop-blur-[6px] sm:p-5"
+      onClick={onClose}
+      role="presentation"
+    >
+      <div
+        className="w-full max-w-5xl overflow-hidden border border-white/15 bg-[#f7f4ee] shadow-[0_30px_90px_rgba(0,0,0,0.35)]"
+        onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        aria-label={`${label} gallery`}
+      >
+        <div className="flex items-center justify-between border-b border-[#e5ddcf] bg-white px-4 py-3 sm:px-5">
+          <div>
+            <p className="font-libra text-2xl text-[#ff2eb3] sm:text-3xl">{label}</p>
+            <p className="mt-1 text-xs uppercase tracking-[0.24em] text-[#6b5f4d]">
+              {gallery.length} images
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={onClose}
+            className="flex h-10 w-10 items-center justify-center border border-[#d8cdbd] bg-white text-2xl leading-none text-gray-700 hover:bg-[#f4efe6]"
+            aria-label="Close gallery"
+          >
+            ×
+          </button>
+        </div>
+
+        <div className="flex flex-col gap-3 p-3 sm:p-5">
+          <div className="relative min-h-[56vh] overflow-hidden border border-[#e4dac8] bg-white">
+            <Image
+              src={currentImage}
+              alt={`${label} preview ${selectedIndex + 1}`}
+              fill
+              sizes="(max-width: 1024px) 100vw, 90vw"
+              className="object-contain p-4 sm:p-6"
+              priority
+            />
+
+            <button
+              type="button"
+              onClick={() => setSelectedIndex((current) => (current - 1 + gallery.length) % gallery.length)}
+              className="absolute left-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-[#dfd4c4] bg-white/95 text-xl text-[#3d3327] shadow-sm hover:bg-[#f6f0e6]"
+              aria-label="Previous image"
+            >
+              ‹
+            </button>
+            <button
+              type="button"
+              onClick={() => setSelectedIndex((current) => (current + 1) % gallery.length)}
+              className="absolute right-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-[#dfd4c4] bg-white/95 text-xl text-[#3d3327] shadow-sm hover:bg-[#f6f0e6]"
+              aria-label="Next image"
+            >
+              ›
+            </button>
+
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 border border-[#e4dac8] bg-white/95 px-3 py-1 text-xs uppercase tracking-[0.22em] text-[#6b5f4d]">
+              {String(selectedIndex + 1).padStart(2, "0")} / {String(gallery.length).padStart(2, "0")}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-4 gap-2 sm:grid-cols-8">
+            {gallery.map((src, index) => {
+              const active = index === selectedIndex;
+
+              return (
+                <button
+                  key={`${label}-${index}`}
+                  type="button"
+                  onClick={() => setSelectedIndex(index)}
+                  className={`relative aspect-square overflow-hidden border bg-white transition-all duration-150 ${
+                    active
+                      ? "border-[#97D700] shadow-[0_0_0_2px_rgba(151,215,0,0.18)]"
+                      : "border-[#e0d7c9] hover:border-[#b89d77]"
+                  }`}
+                  aria-label={`Show image ${index + 1}`}
+                  aria-pressed={active}
+                >
+                  <Image
+                    src={src}
+                    alt={`${label} thumbnail ${index + 1}`}
+                    fill
+                    sizes="(max-width: 640px) 20vw, 10vw"
+                    className="object-contain p-1.5"
+                  />
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const ProductCard = ({ heading, book, product }: ProductCardProps) => {
   const [qty, setQty] = useState(1);
   const [justAdded, setJustAdded] = useState(false);
+  const [galleryOpen, setGalleryOpen] = useState(false);
   const { addItem } = useCart();
 
   const handleAddToCart = () => {
@@ -63,73 +173,91 @@ const ProductCard = ({ heading, book, product }: ProductCardProps) => {
   };
 
   return (
-    <motion.div
-      className="flex flex-col border border-gray-200 bg-white shadow-sm"
-      variants={cardVariant}
-      whileHover={{ y: -6, boxShadow: "0 12px 32px rgba(0,0,0,0.12)" }}
-      transition={{ type: "spring", stiffness: 280, damping: 22 }}
-    >
+    <>
       <motion.div
-        className="relative aspect-[0.75] w-full overflow-hidden bg-white"
-        whileHover={{ scale: 1.04 }}
-        transition={{ duration: 0.35, ease: "easeOut" }}
+        className="flex flex-col border border-gray-200 bg-white shadow-sm"
+        variants={cardVariant}
+        whileHover={{ y: -6, boxShadow: "0 12px 32px rgba(0,0,0,0.12)" }}
+        transition={{ type: "spring", stiffness: 280, damping: 22 }}
       >
-        <Image
-          src={product.src}
-          alt={product.label}
-          fill
-          sizes="(max-width: 640px) 90vw, 25vw"
-          className="object-contain"
-        />
+        <motion.button
+          type="button"
+          onClick={() => setGalleryOpen(true)}
+          className="group relative block aspect-[0.75] w-full cursor-zoom-in overflow-hidden bg-white"
+          whileHover={{ scale: 1.04 }}
+          transition={{ duration: 0.35, ease: "easeOut" }}
+          aria-label={`Open ${product.label} gallery`}
+        >
+          <Image
+            src={product.src}
+            alt={product.label}
+            fill
+            sizes="(max-width: 640px) 90vw, 25vw"
+            className="object-contain"
+          />
+          <div className="absolute inset-0 flex items-center justify-center bg-[#111111]/0 opacity-0 transition-all duration-200 group-hover:bg-[#111111]/18 group-hover:opacity-100 group-focus-visible:bg-[#111111]/18 group-focus-visible:opacity-100">
+            <span className="border border-white/80 bg-white px-4 py-2 text-xs uppercase tracking-[0.22em] text-[#1c1c1c] shadow-sm sm:text-sm">
+              Quick View
+            </span>
+          </div>
+        </motion.button>
+
+        <div className="flex flex-col items-center gap-2 px-3 py-3 sm:gap-3 sm:px-4 sm:py-4">
+          <motion.p
+            className="text-center text-lg font-medium text-[#1a1a1a] sm:text-xl md:text-2xl lg:text-3xl"
+            variants={cardItemVariant}
+          >
+            {heading}
+            <span className="block">{product.label}</span>
+          </motion.p>
+
+          <motion.div className="flex items-center gap-3" variants={cardItemVariant}>
+            <span className="text-lg font-bold text-[#2a9d2a] sm:text-xl md:text-2xl lg:text-3xl">
+              {product.price}
+            </span>
+          </motion.div>
+
+          <motion.div
+            className="flex items-center overflow-hidden border border-gray-300"
+            variants={cardItemVariant}
+          >
+            <button
+              onClick={() => setQty((currentQty) => Math.max(1, currentQty - 1))}
+              className="flex h-10 w-10 items-center justify-center bg-white text-xl font-semibold text-[#1a1a1a] hover:bg-gray-100"
+            >
+              -
+            </button>
+            <div className="flex h-10 w-14 items-center justify-center border-x border-gray-300 text-lg font-medium text-[#1a1a1a]">
+              {String(qty).padStart(2, "0")}
+            </div>
+            <button
+              onClick={() => setQty((currentQty) => currentQty + 1)}
+              className="flex h-10 w-10 items-center justify-center bg-white text-xl font-semibold text-[#1a1a1a] hover:bg-gray-100"
+            >
+              +
+            </button>
+          </motion.div>
+
+          <motion.button
+            onClick={handleAddToCart}
+            className="w-full bg-[#97D700] py-2 text-base font-semibold text-white sm:py-3 sm:text-lg"
+            variants={cardItemVariant}
+            whileHover={{ backgroundColor: "#4cae4c", scale: 1.02 }}
+            whileTap={{ scale: 0.97 }}
+          >
+            {justAdded ? "Added to Cart" : "Add to Cart"}
+          </motion.button>
+        </div>
       </motion.div>
 
-      <div className="flex flex-col items-center gap-2 px-3 py-3 sm:gap-3 sm:px-4 sm:py-4">
-        <motion.p
-          className="text-center text-lg font-medium text-[#1a1a1a] sm:text-xl md:text-2xl lg:text-3xl"
-          variants={cardItemVariant}
-        >
-          {heading}
-          <span className="block">{product.label}</span>
-        </motion.p>
-
-        <motion.div className="flex items-center gap-3" variants={cardItemVariant}>
-          <span className="text-lg font-bold text-[#2a9d2a] sm:text-xl md:text-2xl lg:text-3xl">
-            {product.price}
-          </span>
-        </motion.div>
-
-        <motion.div
-          className="flex items-center overflow-hidden border border-gray-300"
-          variants={cardItemVariant}
-        >
-          <button
-            onClick={() => setQty((currentQty) => Math.max(1, currentQty - 1))}
-            className="flex h-10 w-10 items-center justify-center bg-white text-xl font-semibold text-[#1a1a1a] hover:bg-gray-100"
-          >
-            -
-          </button>
-          <div className="flex h-10 w-14 items-center justify-center border-x border-gray-300 text-lg font-medium text-[#1a1a1a]">
-            {String(qty).padStart(2, "0")}
-          </div>
-          <button
-            onClick={() => setQty((currentQty) => currentQty + 1)}
-            className="flex h-10 w-10 items-center justify-center bg-white text-xl font-semibold text-[#1a1a1a] hover:bg-gray-100"
-          >
-            +
-          </button>
-        </motion.div>
-
-        <motion.button
-          onClick={handleAddToCart}
-          className="w-full bg-[#97D700] py-2 text-base font-semibold text-white sm:py-3 sm:text-lg"
-          variants={cardItemVariant}
-          whileHover={{ backgroundColor: "#4cae4c", scale: 1.02 }}
-          whileTap={{ scale: 0.97 }}
-        >
-          {justAdded ? "Added to Cart" : "Add to Cart"}
-        </motion.button>
-      </div>
-    </motion.div>
+      {galleryOpen ? (
+        <GalleryModal
+          label={`${book.title} - ${product.label}`}
+          gallery={product.gallery}
+          onClose={() => setGalleryOpen(false)}
+        />
+      ) : null}
+    </>
   );
 };
 
