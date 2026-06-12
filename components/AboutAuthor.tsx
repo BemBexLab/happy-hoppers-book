@@ -7,7 +7,7 @@ const AboutAuthor = () => {
     <section className="relative overflow-hidden bg-red-500">
       <div
         aria-hidden
-        className="absolute inset-0 bg-contain bg-top bg-no-repeat opacity-[0.94]"
+        className="absolute inset-0 bg-[length:100%_100%] bg-center bg-no-repeat opacity-[0.94]"
         style={{ backgroundImage: "url('/GINA%20BALLOTTA%20-%201200%20DPI%20-%20V5%20-%2040%25_edit.avif')" }}
       />
 

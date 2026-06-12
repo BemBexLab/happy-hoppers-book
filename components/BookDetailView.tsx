@@ -163,7 +163,7 @@ const BookDetailView = ({ book }: BookDetailViewProps) => {
               {book.bookLabel}
             </p>
             <h1
-              className="mt-3 font-bold text-[#2a3ccf] font-libra text-4xl leading-[0.95] text-[#2832bb] sm:text-5xl lg:text-6xl"
+              className="mt-3 text-[#2a3ccf] font-libra text-4xl leading-[0.95] text-[#2832bb] sm:text-5xl lg:text-6xl"
             >
               {book.title}
             </h1>
@@ -182,7 +182,7 @@ const BookDetailView = ({ book }: BookDetailViewProps) => {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <motion.p
-          className="text-4xl font-libra font-bold text-[#2a3ccf]"
+          className="text-4xl font-libra text-[#2a3ccf]"
           // style={serifStyle}
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -192,7 +192,7 @@ const BookDetailView = ({ book }: BookDetailViewProps) => {
           Buy {book.title} in your favorite format
         </motion.p>
         <motion.p
-          className="mt-2 font-libra text-4xl font-bold text-[#ff2eb3]"
+          className="mt-2 font-libra text-4xl text-[#ff2eb3]"
           // style={serifStyle}
           initial={{ opacity: 0, scale: 0.88 }}
           whileInView={{ opacity: 1, scale: 1 }}
