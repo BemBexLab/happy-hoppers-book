@@ -5,10 +5,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
 import { PiShoppingCart } from "react-icons/pi";
+import { books } from "@/app/books/data";
 import { useCart } from "@/components/CartProvider";
 
 const navItems = [
-  { label: "Books", href: "/books" },
+  { label: "Books", href: "/" },
   { label: "Characters", href: "/characters" },
   // { label: "Toy Sculptures", href: "/toy-sculptures" },
   { label: "Author", href: "/author" },
@@ -42,7 +43,7 @@ const HomeHero = () => {
   const { itemCount } = useCart();
 
   return (
-    <section className="relative overflow-hidden bg-white px-4 pt-6 pb-0 sm:px-6 sm:pt-8 lg:h-[590px] lg:px-0 lg:pt-[25px]">
+    <section className="relative overflow-visible bg-white px-4 pt-6 pb-0 sm:px-6 sm:pt-8 lg:h-[590px] lg:px-0 lg:pt-[25px]">
       {/* Centered logo artwork */}
       <motion.div
         className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col items-center"
@@ -120,14 +121,47 @@ const HomeHero = () => {
             >
               {navItems.map((item) => (
                 <motion.div key={item.label} variants={navItem}>
-                  <Link
-                    href={item.href}
-                    className={`whitespace-nowrap transition-colors hover:opacity-70 ${
-                      pathname === item.href ? "text-[#74D1EA]" : "text-[#072f3f]"
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
+                  {item.label === "Books" ? (
+                    <div className="group relative">
+                      <Link
+                        href="/"
+                        className={`whitespace-nowrap transition-colors hover:opacity-70 ${
+                          pathname === "/" || pathname === "/books" || pathname.startsWith("/books/")
+                            ? "text-[#74D1EA]"
+                            : "text-[#072f3f]"
+                        }`}
+                      >
+                        {item.label}
+                      </Link>
+
+                      <div className="invisible absolute left-1/2 top-full z-30 mt-3 w-56 -translate-x-1/2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                        <div className="rounded-sm border border-[#74D1EA] bg-white/98 py-2 shadow-[0_10px_24px_rgba(0,0,0,0.12)]">
+                          {books.map((book) => (
+                            <Link
+                              key={book.slug}
+                              href={`/books/${book.slug}`}
+                              className={`block px-4 py-2 text-left text-[14px] leading-none transition-colors hover:bg-[#f2fbfe] hover:text-[#74D1EA] ${
+                                pathname === `/books/${book.slug}`
+                                  ? "text-[#74D1EA]"
+                                  : "text-[#072f3f]"
+                              }`}
+                            >
+                              {book.bookLabel}: {book.title}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className={`whitespace-nowrap transition-colors hover:opacity-70 ${
+                        pathname === item.href ? "text-[#74D1EA]" : "text-[#072f3f]"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
                 </motion.div>
               ))}
             </motion.nav>

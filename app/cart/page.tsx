@@ -3,7 +3,7 @@ import HomeHero from "@/components/HomeHero";
 
 const Page = () => {
   return (
-    <section className="bg-white px-80 overflow-hidden">
+    <section className="mx-auto w-full max-w-[1260px] overflow-hidden bg-white">
       <HomeHero />
       <Cart />
     </section>

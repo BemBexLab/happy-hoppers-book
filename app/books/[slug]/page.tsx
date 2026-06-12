@@ -16,7 +16,7 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   }
 
   return (
-    <section className="bg-white px-80 overflow-hidden">
+    <section className="mx-auto w-full max-w-[1260px] overflow-hidden bg-white">
       <HomeHero />
       <BookDetailView book={book} />
     </section>

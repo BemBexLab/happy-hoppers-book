@@ -13,7 +13,7 @@ import ToySculptures from "@/components/ToySculptures";
 export default function Home() {
   return (
     <>
-      <section className="bg-white px-80 overflow-hidden">
+      <section className="mx-auto w-full max-w-[1260px] overflow-hidden bg-white">
         <HomeHero />
         <HappyHoppersBooks />
         <div className="h-5"></div>
