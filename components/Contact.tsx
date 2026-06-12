@@ -27,7 +27,7 @@ const Contact = () => {
 
       <div className="mx-auto mt-6 grid max-w-[1180px] grid-cols-1 items-start gap-8 px-6 sm:px-10 lg:grid-cols-[38%_62%] lg:gap-1 lg:px-0">
         <motion.div
-          className="flex flex-col items-start pt-1 lg:pl-[82px]"
+          className="flex flex-col items-start pt-1 lg:mt-[60px] lg:pl-[82px]"
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.2 }}
