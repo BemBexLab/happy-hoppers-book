@@ -42,4 +42,4 @@ export const productGalleries = {
 } as const;
 
 export const getProductGallery = (label: string) =>
-  productGalleries[label as keyof typeof productGalleries] ?? [];
+  [...(productGalleries[label as keyof typeof productGalleries] ?? [])];
