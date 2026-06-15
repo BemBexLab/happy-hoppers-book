@@ -94,7 +94,7 @@ const Info = () => {
             <div className="flex items-center gap-4">
               <SocialIcon href="https://truthsocial.com/group/happy-hoppers-books" label="Truth Social" bg="#5448ef">
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28" height="28" viewBox="0 0 48 48">
-<rect width="11" height="10" x="3" y="6" fill="#ffffff" fill-rule="evenodd" clip-rule="evenodd"></rect><rect width="11" height="10" x="34" y="33" fill="#17e8b5" fill-rule="evenodd" clip-rule="evenodd"></rect><polygon fill="#ffffff" fill-rule="evenodd" points="18,6 18,43 29,43 29,16 45,16 45,6" clip-rule="evenodd"></polygon>
+<rect width="11" height="10" x="3" y="6" fill="#ffffff" fillRule="evenodd" clipRule="evenodd"></rect><rect width="11" height="10" x="34" y="33" fill="#17e8b5" fillRule="evenodd" clipRule="evenodd"></rect><polygon fill="#ffffff" fillRule="evenodd" points="18,6 18,43 29,43 29,16 45,16 45,6" clipRule="evenodd"></polygon>
 </svg>
               </SocialIcon>
               <SocialIcon href="https://www.facebook.com/people/Happy-Hoppers-Books/61582321171109/?mibextid=wwXIfr&rdid=nY0SLJnAWN0g8uEN&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19f3myA4Sg%2F%3Fmibextid%3DwwXIfr" label="Facebook" bg="#1877f2">

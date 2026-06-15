@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useState } from "react";
 import { motion } from "motion/react";
-import { serifStyle } from "@/lib/motion";
 import type { Book, BookProduct } from "@/app/books/data";
 import { useCart } from "@/components/CartProvider";
 
@@ -266,6 +265,11 @@ type BookDetailViewProps = {
 };
 
 const BookDetailView = ({ book }: BookDetailViewProps) => {
+  const [heroGalleryOpen, setHeroGalleryOpen] = useState(false);
+  const heroGallery = book.products[0]?.gallery?.length
+    ? book.products[0].gallery
+    : [book.detailImageSrc];
+
   return (
     <section className="bg-white px-4 py-6 sm:px-6 sm:py-8 md:px-8 lg:px-16 lg:py-10">
       <div className="mx-auto max-w-6xl">
@@ -275,16 +279,28 @@ const BookDetailView = ({ book }: BookDetailViewProps) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <div className="mx-auto w-full max-w-[360px]">
-            <Image
-              src={book.detailImageSrc}
-              alt={book.title}
-              width={360}
-              height={480}
-              sizes="(max-width: 1024px) 70vw, 360px"
-              className="h-auto w-full rounded-[6px] object-cover shadow-[0_12px_34px_rgba(0,0,0,0.12)]"
-            />
-          </div>
+          <button
+            type="button"
+            onClick={() => setHeroGalleryOpen(true)}
+            className="group mx-auto block w-full max-w-[360px]"
+            aria-label={`Open ${book.title} gallery`}
+          >
+            <div className="relative overflow-hidden rounded-[6px] shadow-[0_12px_34px_rgba(0,0,0,0.12)]">
+              <Image
+                src={book.detailImageSrc}
+                alt={book.title}
+                width={360}
+                height={480}
+                sizes="(max-width: 1024px) 70vw, 360px"
+                className="h-auto w-full object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-[#111111]/0 opacity-0 transition-all duration-200 group-hover:bg-[#111111]/18 group-hover:opacity-100 group-focus-visible:bg-[#111111]/18 group-focus-visible:opacity-100">
+                <span className="border border-white/80 bg-white px-4 py-2 text-xs uppercase tracking-[0.22em] text-[#1c1c1c] shadow-sm sm:text-sm">
+                  Quick View
+                </span>
+              </div>
+            </div>
+          </button>
 
           <div className="text-center lg:text-left">
             <p className="text-base font-semibold uppercase tracking-[0.18em] text-[#98c73a]">
@@ -347,6 +363,15 @@ const BookDetailView = ({ book }: BookDetailViewProps) => {
           />
         ))}
       </motion.div>
+
+      {heroGalleryOpen ? (
+        <GalleryModal
+          key={`${book.slug}-hero`}
+          label={book.title}
+          gallery={heroGallery}
+          onClose={() => setHeroGalleryOpen(false)}
+        />
+      ) : null}
     </section>
   );
 };
