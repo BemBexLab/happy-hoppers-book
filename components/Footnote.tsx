@@ -4,9 +4,9 @@ import { motion } from "motion/react";
 
 const Footnote = () => {
   return (
-    <footer className="bg-[#d0edf4] px-8 py-8 text-center md:px-56 mx-40">
+    <footer className="mx-auto w-[calc(100%-2rem)] max-w-[1270px] bg-[#d0edf4] px-5 py-8 text-center sm:w-[calc(100%-3rem)] sm:px-8 lg:w-[calc(100%-5rem)] lg:px-16 xl:px-24">
       <motion.p
-        className="mx-auto max-w-8xl text-xs leading-relaxed text-[#1a1a1a]"
+        className="mx-auto max-w-[920px] text-[11px] leading-relaxed text-[#1a1a1a] sm:text-xs"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -18,16 +18,16 @@ const Footnote = () => {
         Hoppers Books &amp; The Happy Hoppers Adventures Series. All rights reserved.
       </motion.p>
 
-      <hr className="my-5 border-black" />
+      <hr className="mx-auto my-5 max-w-[920px] border-black" />
 
       <motion.p
-        className="text-xs text-[#1a1a1a]"
+        className="text-[11px] text-[#1a1a1a] sm:text-xs"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        © 2026 by Gina Ballotta &amp; Happy Hoppers Books. All rights reserved.
+        Copyright 2026 by Gina Ballotta &amp; Happy Hoppers Books. All rights reserved.
       </motion.p>
     </footer>
   );

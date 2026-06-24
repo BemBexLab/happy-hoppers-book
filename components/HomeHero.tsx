@@ -334,26 +334,42 @@ const HomeHero = () => {
                     if (item.label === "Books") {
                       return (
                         <motion.div key={item.label} variants={navItem}>
-                          <button
-                            type="button"
-                            onClick={() =>
-                              setIsMobileBooksOpen((current) => !current)
-                            }
-                            aria-expanded={isMobileBooksOpen}
-                            aria-controls="mobile-books-submenu"
-                            className={`flex w-full items-center justify-between border-b border-[#072f3f]/10 py-3 text-left font-poppins text-[14px] font-medium transition-colors ${
-                              isActive ? "text-[#74D1EA]" : "text-[#072f3f]"
-                            }`}
-                          >
-                            <span>{item.label}</span>
-                            <span
-                              className={`text-[18px] leading-none transition-transform duration-200 ${
-                                isMobileBooksOpen ? "rotate-45" : ""
+                          <div className="flex items-center border-b border-[#072f3f]/10">
+                            <Link
+                              href="/"
+                              onClick={closeMobileMenu}
+                              className={`min-w-0 flex-1 py-3 font-poppins text-[14px] font-medium transition-colors ${
+                                isActive ? "text-[#74D1EA]" : "text-[#072f3f]"
                               }`}
                             >
-                              +
-                            </span>
-                          </button>
+                              {item.label}
+                            </Link>
+
+                            <button
+                              type="button"
+                              onClick={() =>
+                                setIsMobileBooksOpen((current) => !current)
+                              }
+                              aria-label={
+                                isMobileBooksOpen
+                                  ? "Collapse books menu"
+                                  : "Expand books menu"
+                              }
+                              aria-expanded={isMobileBooksOpen}
+                              aria-controls="mobile-books-submenu"
+                              className={`ml-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#74D1EA]/50 text-[18px] leading-none transition-colors ${
+                                isActive ? "text-[#74D1EA]" : "text-[#072f3f]"
+                              }`}
+                            >
+                              <span
+                                className={`transition-transform duration-200 ${
+                                  isMobileBooksOpen ? "rotate-45" : ""
+                                }`}
+                              >
+                                +
+                              </span>
+                            </button>
+                          </div>
 
                           <motion.div
                             id="mobile-books-submenu"
