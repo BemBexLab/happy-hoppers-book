@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
 import HomeHero from '@/components/HomeHero'
 import Quotes from '@/components/Quotes'
 import React from 'react'
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Quotes",
+  description:
+    "Read memorable quotes and messages inspired by the Happy Hoppers Books adventure series.",
+  path: "/quotes",
+});
 
 const page = () => {
   return (

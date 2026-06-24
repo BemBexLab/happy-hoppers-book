@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
 import HomeHero from '@/components/HomeHero'
 import ToySculptures from '@/components/ToySculptures'
 import React from 'react'
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Toy Sculptures",
+  description:
+    "Explore Happy Hoppers toy sculptures and creative character-inspired artwork from Gina Ballotta.",
+  path: "/toy-sculptures",
+});
 
 const page = () => {
   return (

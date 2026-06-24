@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import HomeHero from "@/components/HomeHero";
 import VolumeDiscountDetailView from "@/components/VolumeDiscountDetailView";
@@ -7,11 +8,50 @@ import {
   volumeDiscountProducts,
 } from "./data";
 import { getProductSlug } from "@/app/books/data";
+import { buildMetadata } from "@/lib/seo";
+
+const getProductDisplayLabel = (label: string) => {
+  switch (label) {
+    case "Hardcover Books":
+      return "Hardcover";
+    case "Video Books":
+      return "Video Book";
+    case "Ebooks":
+      return "Ebook";
+    case "Audio Books":
+      return "Audio Book";
+    default:
+      return label;
+  }
+};
 
 export function generateStaticParams() {
   return volumeDiscountProducts.map((product) => ({
     sub: getProductSlug(product.label),
   }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ sub: string }>;
+}): Promise<Metadata> {
+  const { sub } = await params;
+  const product = getVolumeDiscountProductBySlug(sub);
+
+  if (!product) {
+    return {};
+  }
+
+  const quickViewData = getVolumeDiscountQuickViewData(product);
+  const productLabel = getProductDisplayLabel(product.label);
+
+  return buildMetadata({
+    title: `${productLabel} Volume Discount`,
+    description: quickViewData.description,
+    path: `/volume-discounts/${getProductSlug(product.label)}`,
+    image: quickViewData.gallery[0] ?? product.gallery[0] ?? product.src,
+  });
 }
 
 const Page = async ({

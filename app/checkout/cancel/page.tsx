@@ -1,5 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { serifStyle } from "@/lib/motion";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Checkout Canceled",
+  description: "Your Happy Hoppers checkout was canceled. Return to your cart or continue browsing the collection.",
+  path: "/checkout/cancel",
+  robots: {
+    index: false,
+    follow: false,
+  },
+});
 
 const CancelPage = () => {
   return (

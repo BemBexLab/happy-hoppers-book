@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { CartProvider } from "@/components/CartProvider";
 import Footnote from "@/components/Footnote";
+import { SITE_URL } from "@/lib/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,7 +48,11 @@ const libra = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "The Happy Hoppers Adventures",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Happy Hoppers Books | The Happy Hoppers Adventures",
+    template: "%s | Happy Hoppers Books",
+  },
   description: "The Happy Hoppers Books AKA The Happy Hoppers Adventures",
 };
 

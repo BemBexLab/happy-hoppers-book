@@ -1,7 +1,16 @@
+import type { Metadata } from "next";
 import HomeHero from '@/components/HomeHero'
 import Pricing from '@/components/Pricing'
 import TheHappyHoppers from '@/components/TheHappyHoppers'
 import React from 'react'
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Volume Discounts",
+  description:
+    "Buy the complete series of 8 Happy Hoppers Books and receive a 10% volume discount across available formats.",
+  path: "/volume-discounts",
+});
 
 const page = () => {
   return (
