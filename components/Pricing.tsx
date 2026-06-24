@@ -112,15 +112,15 @@ const ProductCard = ({
 
   return (
     <motion.div
-      className="flex flex-col border border-gray-200 bg-white shadow-sm"
+      className="flex flex-col border border-[#d7dfe5] bg-white"
       variants={cardVariant}
-      whileHover={{ y: -6, boxShadow: "0 12px 32px rgba(0,0,0,0.12)" }}
+      whileHover={{ y: -4, boxShadow: "0 12px 24px rgba(0,0,0,0.10)" }}
       transition={{ type: "spring", stiffness: 280, damping: 22 }}
     >
       <motion.div
-        className="group relative block aspect-[0.75] w-full overflow-hidden bg-white"
-        whileHover={{ scale: 1.04 }}
-        transition={{ duration: 0.35, ease: "easeOut" }}
+        className="group relative block aspect-[0.76] w-full overflow-hidden border-b border-[#d7dfe5] bg-white"
+        whileHover={{ scale: 1.02 }}
+        transition={{ duration: 0.25, ease: "easeOut" }}
       >
         <Link
           href={productHref}
@@ -142,39 +142,37 @@ const ProductCard = ({
         </Link>
       </motion.div>
 
-      <div className="flex flex-col items-center gap-2 px-3 py-3 sm:gap-3 sm:px-4 sm:py-4">
+      <div className="flex flex-col items-center gap-2 px-3 py-3">
         <motion.p
-          className="text-center text-lg font-medium text-[#1a1a1a] sm:text-xl md:text-2xl lg:text-3xl"
+          className="min-h-[70px] text-center text-[19px] leading-[1.15] font-normal text-[#0b3550]"
           variants={cardItemVariant}
         >
-          Buy Series of 8 <span className="block">{label}</span>
+          Buy Series of 8 -<span className="block">{label}</span>
         </motion.p>
 
-        <motion.div className="flex items-center gap-3" variants={cardItemVariant}>
-          <span className="text-lg text-[#2a9d2a] sm:text-xl md:text-2xl lg:text-3xl">
-            {price}
-          </span>
-          <span className="text-sm text-gray-400 line-through sm:text-base md:text-lg lg:text-xl">
+        <motion.div className="flex items-center gap-2" variants={cardItemVariant}>
+          <span className="text-[19px] text-[#8ad400] line-through">
             {original}
           </span>
+          <span className="text-[19px] text-[#8ad400]">{price}</span>
         </motion.div>
 
         <motion.div
-          className="flex items-center overflow-hidden border border-gray-300"
+          className="flex w-full items-center overflow-hidden border border-[#9fb3c1] bg-white"
           variants={cardItemVariant}
         >
           <button
             onClick={() => setQty((q) => Math.max(1, q - 1))}
-            className="flex h-10 w-10 items-center justify-center bg-white text-xl font-semibold text-[#1a1a1a] hover:bg-gray-100"
+            className="flex h-9 w-11 items-center justify-center bg-white text-xl font-normal text-[#6e8796] hover:bg-[#f5f8fa]"
           >
             -
           </button>
-          <div className="flex h-10 w-14 items-center justify-center border-x border-gray-300 text-lg font-medium text-[#1a1a1a]">
-            {String(qty).padStart(2, "0")}
+          <div className="flex h-9 flex-1 items-center justify-center border-x border-[#9fb3c1] text-[18px] font-normal text-[#10384c]">
+            {qty}
           </div>
           <button
             onClick={() => setQty((q) => q + 1)}
-            className="flex h-10 w-10 items-center justify-center bg-white text-xl font-semibold text-[#1a1a1a] hover:bg-gray-100"
+            className="flex h-9 w-11 items-center justify-center bg-white text-[30px] font-normal leading-none text-[#6e8796] hover:bg-[#f5f8fa]"
           >
             +
           </button>
@@ -182,9 +180,9 @@ const ProductCard = ({
 
         <motion.button
           onClick={handleAddToCart}
-          className="w-full bg-[#97D700] py-2 text-base font-semibold text-white sm:py-3 sm:text-lg"
+          className="w-full bg-[#8ad400] py-2.5 text-[15px] font-semibold text-white"
           variants={cardItemVariant}
-          whileHover={{ backgroundColor: "#4cae4c", scale: 1.02 }}
+          whileHover={{ backgroundColor: "#78bf00", scale: 1.01 }}
           whileTap={{ scale: 0.97 }}
         >
           {justAdded ? "Added to Cart" : "Add to Cart"}
