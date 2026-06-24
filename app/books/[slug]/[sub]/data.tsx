@@ -111,9 +111,9 @@ const quickViewDataByBook: Record<string, QuickViewBookData> = {
         "This is a 10:17 MP4 format video file, lively narrated by Gina Ballotta. Customers receive a link to download the video book after the product is purchased.",
       details: [],
       gallery: [
+        "/9bed69_341495a2e9b4494eb42433c618cd3a61~mv2.avif",
         "/9bed69_8df13190395546159177e2859f654b1f~mv2.avif",
         "/9bed69_b9b987ac06b74227b3c682f1684565ad~mv2.avif",
-        "/9bed69_341495a2e9b4494eb42433c618cd3a61~mv2.avif",
         "/9bed69_3456d5882925431ba41d3f2a638f311a~mv2.avif",
       ],
     },
@@ -376,7 +376,7 @@ const quickViewDataByBook: Record<string, QuickViewBookData> = {
       ],
     },
   },
-  
+
   "creative-discovery": {
     "hardcover-books": {
       description:
@@ -387,29 +387,29 @@ const quickViewDataByBook: Record<string, QuickViewBookData> = {
         "Publication year:  2025",
         "Pages: 40",
         "Language: English",
-        "ISBN #:  979-8-3507-3693-9",
+        "ISBN #:  979-8-3507-4306-7",
         "Dimensions:  8.5” w x 11” h",
         "Weight:  1.0 pound",
         "Age range: 6 to 99",
         "BISAC Category: Juvenile Fiction",
       ],
       gallery: [
-        "/9bed69_b969bb2967bd4cdfacc87fde8ad56f2f~mv2.avif",
-        "/9bed69_580083f08bb94d0aacc0ecf097cca33d~mv2.avif",
-        "/9bed69_e32809895ab146088244e37dd6e4289d~mv2.avif",
-        "/9bed69_5f336bc8dfcb4abfb5a8997f64b631c3~mv2.avif",
-        "/9bed69_3f7edda29c584daa8e5e05de55e032b8~mv2.avif",
+        "/9bed69_6cc1e26c822640cc96e1f743792a964e~mv2.avif",
+        "/9bed69_2146170c917743cb86fc37a5c05fa78a~mv2.avif",
+        "/9bed69_ba9a720bd0af4d6ebab7bdab04948824~mv2.avif",
+        "/9bed69_6b78c4c86466453fb2dcb67d7c85470e~mv2.avif",
+        "/9bed69_55dad54f77d940aea658e1d8cee32c0d~mv2.avif",
       ],
     },
     "video-books": {
       description:
-        "This is a 09:34 MP4 format video file, lively narrated by Gina Ballotta. Customers receive a link to download the video book after the product is purchased.",
+        "This is a 11:50 MP4 format video file, lively narrated by Gina Ballotta. Customers receive a link to download the video book after the product is purchased.",
       details: [],
       gallery: [
-        "/9bed69_3f7edda29c584daa8e5e05de55e032b8~mv2.avif",
-        "/9bed69_580083f08bb94d0aacc0ecf097cca33d~mv2.avif",
-        "/9bed69_e32809895ab146088244e37dd6e4289d~mv2.avif",
-        "/9bed69_5f336bc8dfcb4abfb5a8997f64b631c3~mv2.avif",
+        "/9bed69_6b78c4c86466453fb2dcb67d7c85470e~mv2.avif",
+        "/9bed69_2146170c917743cb86fc37a5c05fa78a~mv2.avif",
+        "/9bed69_ba9a720bd0af4d6ebab7bdab04948824~mv2.avif",
+        "/9bed69_55dad54f77d940aea658e1d8cee32c0d~mv2.avif",
       ],
     },
     ebooks: {
@@ -417,24 +417,25 @@ const quickViewDataByBook: Record<string, QuickViewBookData> = {
         "This is a digital Flipbook. Customers receive a link to download the E-book after the product is purchased.",
       details: [],
       gallery: [
-        "/9bed69_3f7edda29c584daa8e5e05de55e032b8~mv2.avif",
-        "/9bed69_580083f08bb94d0aacc0ecf097cca33d~mv2.avif",
-        "/9bed69_e32809895ab146088244e37dd6e4289d~mv2.avif",
-        "/9bed69_5f336bc8dfcb4abfb5a8997f64b631c3~mv2.avif",
+        "/9bed69_6b78c4c86466453fb2dcb67d7c85470e~mv2.avif",
+        "/9bed69_2146170c917743cb86fc37a5c05fa78a~mv2.avif",
+        "/9bed69_ba9a720bd0af4d6ebab7bdab04948824~mv2.avif",
+        "/9bed69_55dad54f77d940aea658e1d8cee32c0d~mv2.avif",
       ],
     },
     "audio-books": {
       description:
-        "This is a 09:03 MP3 format audio file, lively narrated by Gina Ballotta. Customers receive a link to download the video book after the product is purchased.",
+        "This is a 11:17 MP3 format audio file, lively narrated by Gina Ballotta. Customers receive a link to download the video book after the product is purchased.",
       details: [],
       gallery: [
-        "/9bed69_3f7edda29c584daa8e5e05de55e032b8~mv2.avif",
-        "/9bed69_580083f08bb94d0aacc0ecf097cca33d~mv2.avif",
-        "/9bed69_e32809895ab146088244e37dd6e4289d~mv2.avif",
-        "/9bed69_5f336bc8dfcb4abfb5a8997f64b631c3~mv2.avif",
+        "/9bed69_6b78c4c86466453fb2dcb67d7c85470e~mv2.avif",
+        "/9bed69_2146170c917743cb86fc37a5c05fa78a~mv2.avif",
+        "/9bed69_ba9a720bd0af4d6ebab7bdab04948824~mv2.avif",
+        "/9bed69_55dad54f77d940aea658e1d8cee32c0d~mv2.avif",
       ],
     },
   },
+
   "love-and-be-loved": {
     "hardcover-books": {
       description:
@@ -445,29 +446,29 @@ const quickViewDataByBook: Record<string, QuickViewBookData> = {
         "Publication year:  2025",
         "Pages: 40",
         "Language: English",
-        "ISBN #:  979-8-3507-3693-9",
+        "ISBN #: 979-8-3507-3693-9",
         "Dimensions:  8.5” w x 11” h",
         "Weight:  1.0 pound",
         "Age range: 6 to 99",
         "BISAC Category: Juvenile Fiction",
       ],
       gallery: [
-        "/9bed69_b969bb2967bd4cdfacc87fde8ad56f2f~mv2.avif",
-        "/9bed69_580083f08bb94d0aacc0ecf097cca33d~mv2.avif",
-        "/9bed69_e32809895ab146088244e37dd6e4289d~mv2.avif",
-        "/9bed69_5f336bc8dfcb4abfb5a8997f64b631c3~mv2.avif",
-        "/9bed69_3f7edda29c584daa8e5e05de55e032b8~mv2.avif",
+        "/9bed69_aeeab636659e4739b70a7f5acd6b695b~mv2.avif",
+        "/9bed69_096bfa07762b49eb9ef2ae90db034bbd~mv2.avif",
+        "/9bed69_4ee51fc03fac4f86b303a88be86f0d85~mv2.avif",
+        "/9bed69_3da38c0d69964136a5318a75977eebae~mv2.avif",
+        "/9bed69_d28c43ed48574c78939feece65a95f6c~mv2.avif",
       ],
     },
     "video-books": {
       description:
-        "This is a 09:34 MP4 format video file, lively narrated by Gina Ballotta. Customers receive a link to download the video book after the product is purchased.",
+        "This is a 08:27 MP4 format video file, lively narrated by Gina Ballotta. Customers receive a link to download the video book after the product is purchased.",
       details: [],
       gallery: [
-        "/9bed69_3f7edda29c584daa8e5e05de55e032b8~mv2.avif",
-        "/9bed69_580083f08bb94d0aacc0ecf097cca33d~mv2.avif",
-        "/9bed69_e32809895ab146088244e37dd6e4289d~mv2.avif",
-        "/9bed69_5f336bc8dfcb4abfb5a8997f64b631c3~mv2.avif",
+        "/9bed69_3da38c0d69964136a5318a75977eebae~mv2.avif",
+        "/9bed69_096bfa07762b49eb9ef2ae90db034bbd~mv2.avif",
+        "/9bed69_4ee51fc03fac4f86b303a88be86f0d85~mv2.avif",
+        "/9bed69_d28c43ed48574c78939feece65a95f6c~mv2.avif",
       ],
     },
     ebooks: {
@@ -475,21 +476,21 @@ const quickViewDataByBook: Record<string, QuickViewBookData> = {
         "This is a digital Flipbook. Customers receive a link to download the E-book after the product is purchased.",
       details: [],
       gallery: [
-        "/9bed69_3f7edda29c584daa8e5e05de55e032b8~mv2.avif",
-        "/9bed69_580083f08bb94d0aacc0ecf097cca33d~mv2.avif",
-        "/9bed69_e32809895ab146088244e37dd6e4289d~mv2.avif",
-        "/9bed69_5f336bc8dfcb4abfb5a8997f64b631c3~mv2.avif",
+        "/9bed69_3da38c0d69964136a5318a75977eebae~mv2.avif",
+        "/9bed69_096bfa07762b49eb9ef2ae90db034bbd~mv2.avif",
+        "/9bed69_4ee51fc03fac4f86b303a88be86f0d85~mv2.avif",
+        "/9bed69_d28c43ed48574c78939feece65a95f6c~mv2.avif",
       ],
     },
     "audio-books": {
       description:
-        "This is a 09:03 MP3 format audio file, lively narrated by Gina Ballotta. Customers receive a link to download the video book after the product is purchased.",
+        "This is a 07:57 MP3 format audio file, lively narrated by Gina Ballotta. Customers receive a link to download the video book after the product is purchased.",
       details: [],
       gallery: [
-        "/9bed69_3f7edda29c584daa8e5e05de55e032b8~mv2.avif",
-        "/9bed69_580083f08bb94d0aacc0ecf097cca33d~mv2.avif",
-        "/9bed69_e32809895ab146088244e37dd6e4289d~mv2.avif",
-        "/9bed69_5f336bc8dfcb4abfb5a8997f64b631c3~mv2.avif",
+        "/9bed69_3da38c0d69964136a5318a75977eebae~mv2.avif",
+        "/9bed69_096bfa07762b49eb9ef2ae90db034bbd~mv2.avif",
+        "/9bed69_4ee51fc03fac4f86b303a88be86f0d85~mv2.avif",
+        "/9bed69_d28c43ed48574c78939feece65a95f6c~mv2.avif",
       ],
     },
   },

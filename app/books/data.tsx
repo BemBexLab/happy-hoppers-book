@@ -18,35 +18,27 @@ export type Book = {
   products: BookProduct[];
 };
 
+const createBookProduct = (
+  label: string,
+  price: string,
+  original: string,
+): BookProduct => {
+  const gallery = getProductGallery(label);
+
+  return {
+    label,
+    price,
+    original,
+    src: gallery[0] ?? "/Rectangle 82.png",
+    gallery,
+  };
+};
+
 const defaultProducts: BookProduct[] = [
-  {
-    label: "Hardcover Books",
-    price: "$25.00",
-    original: "$25.00",
-    src: "/Rectangle 82.png",
-    gallery: getProductGallery("Hardcover Books"),
-  },
-  {
-    label: "Video Books",
-    price: "$20.00",
-    original: "$20.00",
-    src: "/Rectangle 82.png",
-    gallery: getProductGallery("Video Books"),
-  },
-  {
-    label: "Ebooks",
-    price: "$15.00",
-    original: "$15.00",
-    src: "/Rectangle 82.png",
-    gallery: getProductGallery("Ebooks"),
-  },
-  {
-    label: "Audio Books",
-    price: "$10.00",
-    original: "$10.00",
-    src: "/Rectangle 82.png",
-    gallery: getProductGallery("Audio Books"),
-  },
+  createBookProduct("Hardcover Books", "$25.00", "$25.00"),
+  createBookProduct("Video Books", "$20.00", "$20.00"),
+  createBookProduct("Ebooks", "$15.00", "$15.00"),
+  createBookProduct("Audio Books", "$10.00", "$10.00"),
 ];
 
 export const books: Book[] = [
@@ -59,34 +51,10 @@ export const books: Book[] = [
     description:
       "Looking for a new adventure? Introducing a series that entertains and effortlessly influences children while providing valuable life lessons. In Book 1, the happy hoppers encounter the arrival of 2 friendly creatures. Aren't you curious? Each story flows into the next revealing layers of impactful, teachable moments. (Printed, E-book & Video-book)",
     products: [
-      {
-        label: "Hardcover Books",
-        price: "$25.00",
-        original: "$25.00",
-        src: "/Rectangle 82.png",
-        gallery: getProductGallery("Hardcover Books"),
-      },
-      {
-        label: "Video Books",
-        price: "$20.00",
-        original: "$20.00",
-        src: "/Rectangle 82.png",
-        gallery: getProductGallery("Video Books"),
-      },
-      {
-        label: "Ebooks",
-        price: "$15.00",
-        original: "$15.00",
-        src: "/Rectangle 82.png",
-        gallery: getProductGallery("Ebooks"),
-      },
-      {
-        label: "Audio Books",
-        price: "$10.00",
-        original: "$10.00",
-        src: "/Rectangle 82.png",
-        gallery: getProductGallery("Audio Books"),
-      },
+      createBookProduct("Hardcover Books", "$25.00", "$25.00"),
+      createBookProduct("Video Books", "$20.00", "$20.00"),
+      createBookProduct("Ebooks", "$15.00", "$15.00"),
+      createBookProduct("Audio Books", "$10.00", "$10.00"),
     ],
   },
   {

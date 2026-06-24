@@ -67,54 +67,54 @@ const BookProductDetailView = ({
   };
 
   return (
-    <section className="bg-white px-4 py-6 sm:px-6 lg:px-10 lg:py-8">
+    <section className="bg-white px-4 py-6 sm:px-6 md:px-8 lg:px-10 lg:py-8">
       <div className="mx-auto max-w-[1240px]">
-        <div className="flex flex-col gap-4 pb-4 text-[14px] text-[#173b4d] sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-col gap-4 pb-4 text-[14px] text-[#173b4d] sm:flex-row sm:items-start sm:justify-between lg:items-center">
+          <div className="flex flex-wrap items-center gap-2 leading-6">
             <Link href="/" className="hover:text-[#10069F]">
               Home
             </Link>
-            <span className="text-[#8aa0ad]">›</span>
+            <span className="text-[#8aa0ad]">&rsaquo;</span>
             <Link href={`/books/${book.slug}`} className="hover:text-[#10069F]">
               All Products
             </Link>
-            <span className="text-[#8aa0ad]">›</span>
+            <span className="text-[#8aa0ad]">&rsaquo;</span>
             <span>{productName}</span>
           </div>
 
-          <div className="flex items-center gap-3 text-[15px]">
+          <div className="flex items-center gap-3 self-start text-[15px] sm:self-auto">
             {prevHref ? (
               <Link href={prevHref} className="text-[#7d909a] hover:text-[#10069F]">
-                ‹ Prev
+                &lsaquo; Prev
               </Link>
             ) : (
-              <span className="text-[#b8c3ca]">‹ Prev</span>
+              <span className="text-[#b8c3ca]">&lsaquo; Prev</span>
             )}
             <span className="text-[#b8c3ca]">|</span>
             {nextHref ? (
               <Link href={nextHref} className="text-[#173b4d] hover:text-[#10069F]">
-                Next ›
+                Next &rsaquo;
               </Link>
             ) : (
-              <span className="text-[#b8c3ca]">Next ›</span>
+              <span className="text-[#b8c3ca]">Next &rsaquo;</span>
             )}
           </div>
         </div>
 
-        <div className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,500px)_360px] lg:items-start lg:justify-center">
+        <div className="mt-6 grid gap-8 md:grid-cols-[minmax(0,1fr)_280px] md:items-start lg:mt-8 lg:grid-cols-[minmax(0,500px)_360px] lg:justify-center">
           <div>
-            <div className="relative aspect-[0.72] max-w-[500px] overflow-hidden border border-[#d6dde2] bg-white">
+            <div className="relative mx-auto aspect-[0.72] w-full max-w-[500px] overflow-hidden border border-[#d6dde2] bg-white md:mx-0">
               <Image
                 src={currentImage}
                 alt={productName}
                 fill
-                sizes="(max-width: 1024px) 100vw, 500px"
+                sizes="(max-width: 767px) 100vw, (max-width: 1024px) 58vw, 500px"
                 className="object-contain"
                 priority
               />
             </div>
 
-            <div className="mt-3 flex flex-wrap gap-2">
+            <div className="mt-3 flex flex-wrap justify-center gap-2 md:justify-start">
               {gallery.map((src, index) => {
                 const active = index === selectedIndex;
 
@@ -140,10 +140,10 @@ const BookProductDetailView = ({
               })}
             </div>
 
-            <div className="mt-6 max-w-[690px] text-[15px] leading-5 text-[#0f2432]">
+            <div className="mt-6 max-w-[690px] text-[15px] leading-6 text-[#0f2432]">
               <p>{quickViewData.description}</p>
 
-              <div className="mt-5 space-y-1 leading-5">
+              <div className="mt-5 space-y-1 leading-6">
                 {quickViewData.details.map((detail) => (
                   <p key={detail}>{detail}</p>
                 ))}
@@ -151,7 +151,7 @@ const BookProductDetailView = ({
             </div>
           </div>
 
-          <div className="text-center lg:pt-1">
+          <div className="mx-auto w-full max-w-[360px] text-center md:sticky md:top-6 lg:pt-1">
             <h1 className="text-[18px] font-normal text-[#10384c] sm:text-[22px]">
               {productName}
             </h1>

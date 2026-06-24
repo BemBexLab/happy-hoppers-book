@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion } from "motion/react";
 import { getProductSlug, type Book, type BookProduct } from "@/app/books/data";
+import { getQuickViewData } from "@/app/books/[slug]/[sub]/data";
 import { useCart } from "@/components/CartProvider";
 
 const gridContainer = {
@@ -172,6 +173,7 @@ const ProductCard = ({ heading, book, product }: ProductCardProps) => {
   const { addItem } = useCart();
   const productDisplayLabel = getProductDisplayLabel(product.label);
   const productHref = `/books/${book.slug}/${getProductSlug(product.label)}`;
+  const previewSrc = getQuickViewData(book, product).gallery[0] ?? product.src;
 
   const handleAddToCart = () => {
     addItem({
@@ -207,7 +209,7 @@ const ProductCard = ({ heading, book, product }: ProductCardProps) => {
             aria-label={`Open ${book.title} ${product.label}`}
           >
             <Image
-              src={product.src}
+              src={previewSrc}
               alt={product.label}
               fill
               sizes="(max-width: 640px) 90vw, 25vw"
