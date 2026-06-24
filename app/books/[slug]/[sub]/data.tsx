@@ -217,22 +217,22 @@ const quickViewDataByBook: Record<string, QuickViewBookData> = {
         "BISAC Category: Juvenile Fiction",
       ],
       gallery: [
-        "/9bed69_b969bb2967bd4cdfacc87fde8ad56f2f~mv2.avif",
-        "/9bed69_580083f08bb94d0aacc0ecf097cca33d~mv2.avif",
-        "/9bed69_e32809895ab146088244e37dd6e4289d~mv2.avif",
-        "/9bed69_5f336bc8dfcb4abfb5a8997f64b631c3~mv2.avif",
-        "/9bed69_3f7edda29c584daa8e5e05de55e032b8~mv2.avif",
+        "/9bed69_806c99578ae14e1ea1d14e2c1c44fcda~mv2.avif",
+        "/9bed69_293052f4e7be423db94fa1a732e3ff32~mv2.avif",
+        "/9bed69_60d55ee2372c4bc58281184f765b074b~mv2.avif",
+        "/9bed69_ee503331ae044f24b2de6db01d721155~mv2.avif",
+        "/9bed69_86928b37ba93444b916e58a6c9301790~mv2.avif",
       ],
     },
     "video-books": {
       description:
-        "This is a 09:34 MP4 format video file, lively narrated by Gina Ballotta. Customers receive a link to download the video book after the product is purchased.",
+        "This is a 09:43 MP4 format video file, lively narrated by Gina Ballotta. Customers receive a link to download the video book after the product is purchased.",
       details: [],
       gallery: [
-        "/9bed69_3f7edda29c584daa8e5e05de55e032b8~mv2.avif",
-        "/9bed69_580083f08bb94d0aacc0ecf097cca33d~mv2.avif",
-        "/9bed69_e32809895ab146088244e37dd6e4289d~mv2.avif",
-        "/9bed69_5f336bc8dfcb4abfb5a8997f64b631c3~mv2.avif",
+        "/9bed69_ee503331ae044f24b2de6db01d721155~mv2.avif",
+        "/9bed69_293052f4e7be423db94fa1a732e3ff32~mv2.avif",
+        "/9bed69_60d55ee2372c4bc58281184f765b074b~mv2.avif",
+        "/9bed69_86928b37ba93444b916e58a6c9301790~mv2.avif",
       ],
     },
     ebooks: {
@@ -240,24 +240,25 @@ const quickViewDataByBook: Record<string, QuickViewBookData> = {
         "This is a digital Flipbook. Customers receive a link to download the E-book after the product is purchased.",
       details: [],
       gallery: [
-        "/9bed69_3f7edda29c584daa8e5e05de55e032b8~mv2.avif",
-        "/9bed69_580083f08bb94d0aacc0ecf097cca33d~mv2.avif",
-        "/9bed69_e32809895ab146088244e37dd6e4289d~mv2.avif",
-        "/9bed69_5f336bc8dfcb4abfb5a8997f64b631c3~mv2.avif",
+        "/9bed69_ee503331ae044f24b2de6db01d721155~mv2.avif",
+        "/9bed69_293052f4e7be423db94fa1a732e3ff32~mv2.avif",
+        "/9bed69_60d55ee2372c4bc58281184f765b074b~mv2.avif",
+        "/9bed69_86928b37ba93444b916e58a6c9301790~mv2.avif",
       ],
     },
     "audio-books": {
       description:
-        "This is a 09:03 MP3 format audio file, lively narrated by Gina Ballotta. Customers receive a link to download the video book after the product is purchased.",
+        "This is a 09:16 MP3 format audio file, lively narrated by Gina Ballotta. Customers receive a link to download the video book after the product is purchased.",
       details: [],
       gallery: [
-        "/9bed69_3f7edda29c584daa8e5e05de55e032b8~mv2.avif",
-        "/9bed69_580083f08bb94d0aacc0ecf097cca33d~mv2.avif",
-        "/9bed69_e32809895ab146088244e37dd6e4289d~mv2.avif",
-        "/9bed69_5f336bc8dfcb4abfb5a8997f64b631c3~mv2.avif",
+        "/9bed69_ee503331ae044f24b2de6db01d721155~mv2.avif",
+        "/9bed69_293052f4e7be423db94fa1a732e3ff32~mv2.avif",
+        "/9bed69_60d55ee2372c4bc58281184f765b074b~mv2.avif",
+        "/9bed69_86928b37ba93444b916e58a6c9301790~mv2.avif",
       ],
     },
   },
+  
   "power-of-thought": {
     "hardcover-books": {
       description:
