@@ -1,9 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import Link from "next/link";
+import { useState } from "react";
 import { motion } from "motion/react";
 import { usePathname } from "next/navigation";
+import { getProductSlug } from "@/app/books/data";
 import { useCart } from "@/components/CartProvider";
 import { getProductGallery } from "@/lib/product-galleries";
 
@@ -54,7 +56,9 @@ const gridContainer = {
 const cardVariant = {
   hidden: { opacity: 0, y: 50, scale: 0.95 },
   show: {
-    opacity: 1, y: 0, scale: 1,
+    opacity: 1,
+    y: 0,
+    scale: 1,
     transition: {
       duration: 0.55,
       ease: "easeOut" as const,
@@ -66,124 +70,11 @@ const cardVariant = {
 
 const cardItemVariant = {
   hidden: { opacity: 0, y: 8 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.35, ease: "easeOut" as const } },
-};
-
-const GalleryModal = ({
-  product,
-  onClose,
-}: {
-  product: Product;
-  onClose: () => void;
-}) => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
-
-  const currentImage = product.gallery[selectedIndex];
-
-  const moveImage = (direction: 1 | -1) => {
-    setSelectedIndex((current) => {
-      const next = current + direction;
-      if (next < 0) return product.gallery.length - 1;
-      if (next >= product.gallery.length) return 0;
-      return next;
-    });
-  };
-
-  return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-[#0b0b14]/80 p-3 backdrop-blur-[6px] sm:p-5"
-      onClick={onClose}
-      role="presentation"
-    >
-      <div
-        className="w-full max-w-5xl overflow-hidden border border-white/15 bg-[#f7f4ee] shadow-[0_30px_90px_rgba(0,0,0,0.35)]"
-        onClick={(e) => e.stopPropagation()}
-        role="dialog"
-        aria-modal="true"
-        aria-label={`${product.label} gallery`}
-      >
-        <div className="flex items-center justify-between border-b border-[#e5ddcf] bg-white px-4 py-3 sm:px-5">
-          <div>
-            <p className="font-libra text-2xl text-[#ff2eb3] sm:text-3xl">{product.label}</p>
-            <p className="mt-1 text-xs uppercase tracking-[0.24em] text-[#6b5f4d]">
-              {product.gallery.length} images
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={onClose}
-            className="flex h-10 w-10 items-center justify-center border border-[#d8cdbd] bg-white text-2xl leading-none text-gray-700 hover:bg-[#f4efe6]"
-            aria-label="Close gallery"
-          >
-            ×
-          </button>
-        </div>
-
-        <div className="flex flex-col gap-3 p-3 sm:p-5">
-          <div className="relative min-h-[56vh] overflow-hidden border border-[#e4dac8] bg-white">
-            <Image
-              src={currentImage}
-              alt={`${product.label} preview ${selectedIndex + 1}`}
-              fill
-              sizes="(max-width: 1024px) 100vw, 90vw"
-              className="object-contain p-4 sm:p-6"
-              priority
-            />
-
-            <button
-              type="button"
-              onClick={() => moveImage(-1)}
-              className="absolute left-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-[#dfd4c4] bg-white/95 text-xl text-[#3d3327] shadow-sm hover:bg-[#f6f0e6]"
-              aria-label="Previous image"
-            >
-              ‹
-            </button>
-            <button
-              type="button"
-              onClick={() => moveImage(1)}
-              className="absolute right-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-[#dfd4c4] bg-white/95 text-xl text-[#3d3327] shadow-sm hover:bg-[#f6f0e6]"
-              aria-label="Next image"
-            >
-              ›
-            </button>
-
-            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 border border-[#e4dac8] bg-white/95 px-3 py-1 text-xs uppercase tracking-[0.22em] text-[#6b5f4d]">
-              {String(selectedIndex + 1).padStart(2, "0")} / {String(product.gallery.length).padStart(2, "0")}
-            </div>
-          </div>
-
-          <div className="grid grid-cols-4 gap-2 sm:grid-cols-8">
-            {product.gallery.map((src, index) => {
-              const active = index === selectedIndex;
-
-              return (
-                <button
-                  key={`${product.label}-${index}`}
-                  type="button"
-                  onClick={() => setSelectedIndex(index)}
-                  className={`relative aspect-square overflow-hidden border bg-white transition-all duration-150 ${
-                    active
-                      ? "border-[#97D700] shadow-[0_0_0_2px_rgba(151,215,0,0.18)]"
-                      : "border-[#e0d7c9] hover:border-[#b89d77]"
-                  }`}
-                  aria-label={`Show image ${index + 1}`}
-                  aria-pressed={active}
-                >
-                  <Image
-                    src={src}
-                    alt={`${product.label} thumbnail ${index + 1}`}
-                    fill
-                    sizes="(max-width: 640px) 20vw, 10vw"
-                    className="object-contain p-1.5"
-                  />
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.35, ease: "easeOut" as const },
+  },
 };
 
 const ProductCard = ({
@@ -191,18 +82,17 @@ const ProductCard = ({
   price,
   original,
   src,
-  onOpenGallery,
 }: {
   label: string;
   price: string;
   original: string;
   src: string;
-  onOpenGallery: () => void;
 }) => {
   const [qty, setQty] = useState(1);
   const [justAdded, setJustAdded] = useState(false);
   const { addItem } = useCart();
   const pathname = usePathname() || "/volume-discounts";
+  const productHref = `/volume-discounts/${getProductSlug(label)}`;
 
   const handleAddToCart = () => {
     addItem({
@@ -227,40 +117,46 @@ const ProductCard = ({
       whileHover={{ y: -6, boxShadow: "0 12px 32px rgba(0,0,0,0.12)" }}
       transition={{ type: "spring", stiffness: 280, damping: 22 }}
     >
-      <motion.button
-        type="button"
-        onClick={onOpenGallery}
-        className="group relative block aspect-[0.75] w-full cursor-zoom-in overflow-hidden bg-white"
+      <motion.div
+        className="group relative block aspect-[0.75] w-full overflow-hidden bg-white"
         whileHover={{ scale: 1.04 }}
         transition={{ duration: 0.35, ease: "easeOut" }}
-        aria-label={`Open ${label} gallery`}
       >
-        <Image
-          src={src}
-          alt={label}
-          fill
-          sizes="(max-width: 640px) 90vw, 25vw"
-          className="object-contain"
-        />
-        <div className="absolute inset-0 flex items-center justify-center bg-[#111111]/0 opacity-0 transition-all duration-200 group-hover:bg-[#111111]/18 group-hover:opacity-100 group-focus-visible:bg-[#111111]/18 group-focus-visible:opacity-100">
-          <span className="border border-white/80 bg-white px-4 py-2 text-xs uppercase tracking-[0.22em] text-[#1c1c1c] shadow-sm sm:text-sm">
-            Quick View
-          </span>
-        </div>
-      </motion.button>
+        <Link
+          href={productHref}
+          className="block h-full w-full"
+          aria-label={`Open ${label} quick view`}
+        >
+          <Image
+            src={src}
+            alt={label}
+            fill
+            sizes="(max-width: 640px) 90vw, 25vw"
+            className="object-contain"
+          />
+          <div className="absolute inset-0 flex items-center justify-center bg-[#111111]/0 opacity-0 transition-all duration-200 group-hover:bg-[#111111]/18 group-hover:opacity-100 group-focus-visible:bg-[#111111]/18 group-focus-visible:opacity-100">
+            <span className="border border-white/80 bg-white px-4 py-2 text-xs uppercase tracking-[0.22em] text-[#1c1c1c] shadow-sm sm:text-sm">
+              Quick View
+            </span>
+          </div>
+        </Link>
+      </motion.div>
 
       <div className="flex flex-col items-center gap-2 px-3 py-3 sm:gap-3 sm:px-4 sm:py-4">
         <motion.p
           className="text-center text-lg font-medium text-[#1a1a1a] sm:text-xl md:text-2xl lg:text-3xl"
           variants={cardItemVariant}
         >
-          Buy Series of 8{" "}
-          <span className="block">{label}</span>
+          Buy Series of 8 <span className="block">{label}</span>
         </motion.p>
 
         <motion.div className="flex items-center gap-3" variants={cardItemVariant}>
-          <span className="text-lg  text-[#2a9d2a] sm:text-xl md:text-2xl lg:text-3xl">{price}</span>
-          <span className="text-sm text-gray-400 line-through sm:text-base md:text-lg lg:text-xl">{original}</span>
+          <span className="text-lg text-[#2a9d2a] sm:text-xl md:text-2xl lg:text-3xl">
+            {price}
+          </span>
+          <span className="text-sm text-gray-400 line-through sm:text-base md:text-lg lg:text-xl">
+            {original}
+          </span>
         </motion.div>
 
         <motion.div
@@ -271,7 +167,7 @@ const ProductCard = ({
             onClick={() => setQty((q) => Math.max(1, q - 1))}
             className="flex h-10 w-10 items-center justify-center bg-white text-xl font-semibold text-[#1a1a1a] hover:bg-gray-100"
           >
-            −
+            -
           </button>
           <div className="flex h-10 w-14 items-center justify-center border-x border-gray-300 text-lg font-medium text-[#1a1a1a]">
             {String(qty).padStart(2, "0")}
@@ -299,27 +195,6 @@ const ProductCard = ({
 };
 
 const Pricing = () => {
-  const [activeProduct, setActiveProduct] = useState<Product | null>(null);
-
-  useEffect(() => {
-    if (!activeProduct) return;
-
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setActiveProduct(null);
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = previousOverflow;
-    };
-  }, [activeProduct]);
-
   return (
     <section className="bg-white px-4 py-6 sm:px-6 sm:py-8 md:px-8 lg:px-16 lg:py-10">
       <motion.div
@@ -330,7 +205,7 @@ const Pricing = () => {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <motion.p
-          className="text-4xl font-libra  text-[#2a3ccf]"
+          className="text-4xl font-libra text-[#10069F]"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -339,7 +214,7 @@ const Pricing = () => {
           Buy the complete series of 8 Books to
         </motion.p>
         <motion.p
-          className="mt-2 text-4xl font-libra  text-[#ff2eb3]"
+          className="mt-2 text-4xl font-libra text-[#ff2eb3]"
           initial={{ opacity: 0, scale: 0.88 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -357,21 +232,9 @@ const Pricing = () => {
         viewport={{ once: true, amount: 0.1 }}
       >
         {products.map((product) => (
-          <ProductCard
-            key={product.label}
-            {...product}
-            onOpenGallery={() => setActiveProduct(product)}
-          />
+          <ProductCard key={product.label} {...product} />
         ))}
       </motion.div>
-
-      {activeProduct ? (
-        <GalleryModal
-          key={activeProduct.label}
-          product={activeProduct}
-          onClose={() => setActiveProduct(null)}
-        />
-      ) : null}
     </section>
   );
 };

@@ -4,9 +4,9 @@ import { motion } from "motion/react";
 
 const Footnote = () => {
   return (
-    <footer className="bg-[#d0edf4] px-8 py-8 text-center md:px-16">
+    <footer className="bg-[#d0edf4] px-8 py-8 text-center md:px-56 mx-40">
       <motion.p
-        className="mx-auto max-w-8xl text-sm leading-relaxed text-[#1a1a1a]"
+        className="mx-auto max-w-8xl text-xs leading-relaxed text-[#1a1a1a]"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -18,8 +18,10 @@ const Footnote = () => {
         Hoppers Books &amp; The Happy Hoppers Adventures Series. All rights reserved.
       </motion.p>
 
+      <hr className="my-5 border-black" />
+
       <motion.p
-        className="mt-8 text-xs text-[#1a1a1a]"
+        className="text-xs text-[#1a1a1a]"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}

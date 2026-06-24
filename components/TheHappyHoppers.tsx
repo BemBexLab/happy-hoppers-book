@@ -25,7 +25,7 @@ const TheHappyHoppers = () => {
             The happy hoppers{" "}
           </motion.span>
           <motion.span
-            className=" uppercase tracking-wide text-[#2a3ccf]"
+            className=" uppercase tracking-wide text-[#10069F]"
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -36,7 +36,7 @@ const TheHappyHoppers = () => {
         </p>
 
         <motion.p
-          className="mt-2 text-4xl font-libra uppercase tracking-wide text-[#2a3ccf]"
+          className="mt-2 text-4xl font-libra uppercase tracking-wide text-[#10069F]"
           initial={{ opacity: 0, scale: 0.88 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}

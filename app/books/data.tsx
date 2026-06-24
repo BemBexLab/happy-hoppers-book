@@ -163,3 +163,9 @@ export const books: Book[] = [
 
 export const getBookBySlug = (slug: string) =>
   books.find((book) => book.slug === slug);
+
+export const getProductSlug = (label: string) =>
+  label.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
+export const getProductBySlug = (book: Book, productSlug: string) =>
+  book.products.find((product) => getProductSlug(product.label) === productSlug);

@@ -114,7 +114,7 @@ const HomeHero = () => {
           <div className="relative flex flex-col items-center gap-4 pt-3 sm:gap-5 sm:pt-5 lg:flex-row lg:justify-center lg:gap-4 lg:pt-[28px]">
             <motion.nav
               aria-label="Primary"
-              className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-center text-[12px] tracking-[-0.01em] text-[#072f3f] sm:gap-x-7 sm:text-[15px] lg:flex-nowrap lg:gap-x-[55px] lg:text-[16px] lg:leading-none"
+              className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-center font-poppins text-[13px] font-medium tracking-[-0.011em] text-[#072f3f] sm:gap-x-8 sm:text-[16px] lg:flex-nowrap lg:gap-x-[53px] lg:text-[14px] lg:leading-none"
               variants={navContainer}
               initial="hidden"
               animate="show"
@@ -146,7 +146,7 @@ const HomeHero = () => {
                                   : "text-[#072f3f]"
                               }`}
                             >
-                              {book.bookLabel}: {book.title}
+                              {book.bookLabel}
                             </Link>
                           ))}
                         </div>

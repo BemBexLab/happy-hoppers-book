@@ -29,7 +29,7 @@ const HappyHoppersBooks = () => {
           className="absolute inset-0 bg-center bg-no-repeat opacity-[1.57]"
           style={{
             backgroundImage: "url('/Rectangle 3.png')",
-            backgroundSize: "auto 93%",
+            backgroundSize: "100% 93%",
             backgroundPosition: "center top",
           }}
         />
@@ -47,7 +47,7 @@ const HappyHoppersBooks = () => {
             </p>
             <h2 className="mt-1 font-libra leading-relaxed text-4xl">
               <span className="text-[#ff29b4]">the happy hoppers</span>{" "}
-              <span className="text-[#2a35c8]">adventures series</span>
+              <span className="text-[#10069F]">adventures series</span>
             </h2>
             <motion.p
               className="mt-8 font-poppins text-[16px] text-[#161616] sm:text-[20px] lg:mt-11 lg:text-[19px]"

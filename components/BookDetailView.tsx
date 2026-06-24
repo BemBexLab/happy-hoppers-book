@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { motion } from "motion/react";
-import type { Book, BookProduct } from "@/app/books/data";
+import { getProductSlug, type Book, type BookProduct } from "@/app/books/data";
 import { useCart } from "@/components/CartProvider";
 
 const gridContainer = {
@@ -39,6 +40,21 @@ type ProductCardProps = {
   heading: string;
   book: Book;
   product: BookProduct;
+};
+
+const getProductDisplayLabel = (label: string) => {
+  switch (label) {
+    case "Hardcover Books":
+      return "Hardcover";
+    case "Video Books":
+      return "Video Book";
+    case "Ebooks":
+      return "Ebook";
+    case "Audio Books":
+      return "Audio Book";
+    default:
+      return label;
+  }
 };
 
 const GalleryModal = ({
@@ -153,8 +169,9 @@ const GalleryModal = ({
 const ProductCard = ({ heading, book, product }: ProductCardProps) => {
   const [qty, setQty] = useState(1);
   const [justAdded, setJustAdded] = useState(false);
-  const [galleryOpen, setGalleryOpen] = useState(false);
   const { addItem } = useCart();
+  const productDisplayLabel = getProductDisplayLabel(product.label);
+  const productHref = `/books/${book.slug}/${getProductSlug(product.label)}`;
 
   const handleAddToCart = () => {
     addItem({
@@ -174,64 +191,66 @@ const ProductCard = ({ heading, book, product }: ProductCardProps) => {
   return (
     <>
       <motion.div
-        className="flex flex-col border border-gray-200 bg-white shadow-sm"
+        className="flex flex-col border border-[#cfd6dc] bg-white"
         variants={cardVariant}
-        whileHover={{ y: -6, boxShadow: "0 12px 32px rgba(0,0,0,0.12)" }}
+        whileHover={{ y: -3 }}
         transition={{ type: "spring", stiffness: 280, damping: 22 }}
       >
-        <motion.button
-          type="button"
-          onClick={() => setGalleryOpen(true)}
-          className="group relative block aspect-[0.75] w-full cursor-zoom-in overflow-hidden bg-white"
-          whileHover={{ scale: 1.04 }}
-          transition={{ duration: 0.35, ease: "easeOut" }}
-          aria-label={`Open ${product.label} gallery`}
+        <motion.div
+          className="group relative aspect-[0.78] w-full overflow-hidden border-b border-[#d6dde2] bg-white"
+          whileHover={{ scale: 1.02 }}
+          transition={{ duration: 0.25, ease: "easeOut" }}
         >
-          <Image
-            src={product.src}
-            alt={product.label}
-            fill
-            sizes="(max-width: 640px) 90vw, 25vw"
-            className="object-contain"
-          />
-          <div className="absolute inset-0 flex items-center justify-center bg-[#111111]/0 opacity-0 transition-all duration-200 group-hover:bg-[#111111]/18 group-hover:opacity-100 group-focus-visible:bg-[#111111]/18 group-focus-visible:opacity-100">
-            <span className="border border-white/80 bg-white px-4 py-2 text-xs uppercase tracking-[0.22em] text-[#1c1c1c] shadow-sm sm:text-sm">
-              Quick View
-            </span>
-          </div>
-        </motion.button>
+          <Link
+            href={productHref}
+            className="block h-full w-full"
+            aria-label={`Open ${book.title} ${product.label}`}
+          >
+            <Image
+              src={product.src}
+              alt={product.label}
+              fill
+              sizes="(max-width: 640px) 90vw, 25vw"
+              className="object-contain"
+            />
+            <div className="absolute inset-0 flex items-center justify-center bg-[#111111]/0 opacity-0 transition-all duration-200 group-hover:bg-[#111111]/18 group-hover:opacity-100 group-focus-visible:bg-[#111111]/18 group-focus-visible:opacity-100">
+              <span className="border border-white/80 bg-white px-4 py-2 text-xs uppercase tracking-[0.22em] text-[#1c1c1c] shadow-sm sm:text-sm">
+                Quick View
+              </span>
+            </div>
+          </Link>
+        </motion.div>
 
-        <div className="flex flex-col items-center gap-2 px-3 py-3 sm:gap-3 sm:px-4 sm:py-4">
+        <div className="flex flex-col items-center gap-2 px-3 py-2 sm:px-3 sm:py-2.5">
           <motion.p
-            className="text-center text-lg font-medium text-[#1a1a1a] sm:text-xl md:text-2xl lg:text-3xl"
+            className="min-h-[52px] text-center text-[17px] leading-[1.2] font-normal text-[#0c3d57] sm:text-[18px]"
             variants={cardItemVariant}
           >
-            {heading}
-            <span className="block">{product.label}</span>
+            {heading} -<span className="block">{productDisplayLabel}</span>
           </motion.p>
 
           <motion.div className="flex items-center gap-3" variants={cardItemVariant}>
-            <span className="text-lg font-bold text-[#2a9d2a] sm:text-xl md:text-2xl lg:text-3xl">
+            <span className="text-[31px] leading-none font-normal text-[#8ad400]">
               {product.price}
             </span>
           </motion.div>
 
           <motion.div
-            className="flex items-center overflow-hidden border border-gray-300"
+            className="flex w-full items-center overflow-hidden border border-[#9fb3c1] bg-white"
             variants={cardItemVariant}
           >
             <button
               onClick={() => setQty((currentQty) => Math.max(1, currentQty - 1))}
-              className="flex h-10 w-10 items-center justify-center bg-white text-xl font-semibold text-[#1a1a1a] hover:bg-gray-100"
+              className="flex h-7 w-8 items-center justify-center bg-white text-xl font-normal text-[#5f7481] hover:bg-[#f6f9fb]"
             >
               -
             </button>
-            <div className="flex h-10 w-14 items-center justify-center border-x border-gray-300 text-lg font-medium text-[#1a1a1a]">
-              {String(qty).padStart(2, "0")}
+            <div className="flex h-7 flex-1 items-center justify-center border-x border-[#9fb3c1] text-[14px] text-[#213743]">
+              {qty}
             </div>
             <button
               onClick={() => setQty((currentQty) => currentQty + 1)}
-              className="flex h-10 w-10 items-center justify-center bg-white text-xl font-semibold text-[#1a1a1a] hover:bg-gray-100"
+              className="flex h-7 w-8 items-center justify-center bg-white text-xl font-normal text-[#5f7481] hover:bg-[#f6f9fb]"
             >
               +
             </button>
@@ -239,9 +258,9 @@ const ProductCard = ({ heading, book, product }: ProductCardProps) => {
 
           <motion.button
             onClick={handleAddToCart}
-            className="w-full bg-[#97D700] py-2 text-base font-semibold text-white sm:py-3 sm:text-lg"
+            className="w-full bg-[#8ad400] py-2 text-[15px] font-semibold text-white"
             variants={cardItemVariant}
-            whileHover={{ backgroundColor: "#4cae4c", scale: 1.02 }}
+            whileHover={{ backgroundColor: "#78bf00", scale: 1.01 }}
             whileTap={{ scale: 0.97 }}
           >
             {justAdded ? "Added to Cart" : "Add to Cart"}
@@ -249,13 +268,6 @@ const ProductCard = ({ heading, book, product }: ProductCardProps) => {
         </div>
       </motion.div>
 
-      {galleryOpen ? (
-        <GalleryModal
-          label={`${book.title} - ${product.label}`}
-          gallery={product.gallery}
-          onClose={() => setGalleryOpen(false)}
-        />
-      ) : null}
     </>
   );
 };
@@ -273,7 +285,7 @@ const BookDetailView = ({ book }: BookDetailViewProps) => {
   return (
     <section className="bg-white px-4 py-6 sm:px-6 sm:py-8 md:px-8 lg:px-16 lg:py-10">
       <div className="mx-auto max-w-6xl">
-        <motion.div
+        {/* <motion.div
           className="grid items-center gap-8 pb-10 lg:grid-cols-[minmax(280px,360px)_1fr]"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -315,10 +327,10 @@ const BookDetailView = ({ book }: BookDetailViewProps) => {
               {book.description}
             </p>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
 
-      <motion.div
+      {/* <motion.div
         className="mb-4 text-center sm:mb-6 lg:mb-8"
         initial={{ opacity: 0, y: -24 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -345,7 +357,7 @@ const BookDetailView = ({ book }: BookDetailViewProps) => {
         >
           Choose your edition below
         </motion.p>
-      </motion.div>
+      </motion.div> */}
 
       <motion.div
         className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
@@ -357,7 +369,7 @@ const BookDetailView = ({ book }: BookDetailViewProps) => {
         {book.products.map((product) => (
           <ProductCard
             key={product.label}
-            heading={`Buy ${book.bookLabel}`}
+            heading={book.title}
             book={book}
             product={product}
           />

@@ -40,7 +40,7 @@ const AboutAuthor = () => {
             viewport={{ once: true, amount: 0.35 }}
             transition={{ duration: 0.55, delay: 0.14, ease: "easeOut" }}
           >
-            <span className="font-libra text-[17px] leading-none text-[#2427c7]">
+            <span className="font-libra text-[17px] leading-none text-[#10069F]">
               gina ballotta
             </span>{" "}
             grew up watching her mother create Victorian sculptures. At 17, she
