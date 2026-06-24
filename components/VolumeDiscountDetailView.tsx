@@ -142,14 +142,14 @@ const VolumeDiscountDetailView = ({
               })}
             </div>
 
-            <div className="mt-6 max-w-[690px] text-[15px] leading-7 text-[#0f2432]">
+            <div className="mt-6 max-w-[690px] text-[15px] leading-5 text-[#0f2432]">
               <p>{quickViewData.description}</p>
 
-              <div className="mt-6 space-y-1 leading-7">
+              {/* <div className="mt-6 space-y-1 leading-7">
                 {quickViewData.details.map((detail) => (
                   <p key={detail}>{detail}</p>
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
 

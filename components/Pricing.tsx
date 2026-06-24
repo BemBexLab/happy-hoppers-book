@@ -15,6 +15,7 @@ type Product = {
   original: string;
   src: string;
   gallery: string[];
+  description?: string;
 };
 
 const products: Product[] = [
@@ -23,28 +24,32 @@ const products: Product[] = [
     price: "$180.00",
     original: "$200.00",
     gallery: getProductGallery("Hardcover Books"),
-    src: "/Rectangle 71.png",
+    src: "/9bed69_3f7edda29c584daa8e5e05de55e032b8~mv2.avif",
+    description: "Customers will receive the 8 printed, hardcover books via USPS or UPS ground service after the products are purchased.",
   },
   {
     label: "Video Books",
     price: "$144.00",
     original: "$160.00",
     gallery: getProductGallery("Video Books"),
-    src: "/Rectangle 71.png",
+    src: "/9bed69_3f7edda29c584daa8e5e05de55e032b8~mv2.avif",
+    description: "Customers receive an email to download the 8 MP4 video books after the products are purchased.",
   },
   {
     label: "Ebooks",
     price: "$108.00",
     original: "$120.00",
     gallery: getProductGallery("Ebooks"),
-    src: "/Rectangle 71.png",
+    src: "/9bed69_3f7edda29c584daa8e5e05de55e032b8~mv2.avif",
+    description: "Customers receive an email to download the 8 digital flipbooks after the products are purchased.",
   },
   {
     label: "Audio Books",
     price: "$72.00",
     original: "$80.00",
     gallery: getProductGallery("Audio Books"),
-    src: "/Rectangle 71.png",
+    src: "/9bed69_3f7edda29c584daa8e5e05de55e032b8~mv2.avif",
+    description: "Customers receive an email to download the 8 MP3 audio books after the products are purchased.",
   },
 ];
 

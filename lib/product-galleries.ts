@@ -1,6 +1,6 @@
 export const productGalleries = {
   "Hardcover Books": [
-    "/Rectangle 71.png",
+    "/9bed69_3f7edda29c584daa8e5e05de55e032b8~mv2.avif",
     "/9bed69_a32a46e843334bf89256ab8b558606b6~mv2.jpg.avif",
     "/9bed69_065c1a45654b433e84ccfecd4032eff0~mv2.jpg.avif",
     "/9bed69_ee503331ae044f24b2de6db01d721155~mv2.jpg.avif",
@@ -10,7 +10,7 @@ export const productGalleries = {
     "/9bed69_3da38c0d69964136a5318a75977eebae~mv2.jpg.avif",
   ],
   "Video Books": [
-    "/Rectangle 71.png",
+    "/9bed69_3f7edda29c584daa8e5e05de55e032b8~mv2.avif",
     "/9bed69_a32a46e843334bf89256ab8b558606b6~mv2.jpg.avif",
     "/9bed69_065c1a45654b433e84ccfecd4032eff0~mv2.jpg.avif",
     "/9bed69_ee503331ae044f24b2de6db01d721155~mv2.jpg.avif",
@@ -20,7 +20,7 @@ export const productGalleries = {
     "/9bed69_3da38c0d69964136a5318a75977eebae~mv2.jpg.avif",
   ],
   Ebooks: [
-    "/Rectangle 71.png",
+    "/9bed69_3f7edda29c584daa8e5e05de55e032b8~mv2.avif",
     "/9bed69_a32a46e843334bf89256ab8b558606b6~mv2.jpg.avif",
     "/9bed69_065c1a45654b433e84ccfecd4032eff0~mv2.jpg.avif",
     "/9bed69_ee503331ae044f24b2de6db01d721155~mv2.jpg.avif",
@@ -30,7 +30,7 @@ export const productGalleries = {
     "/9bed69_3da38c0d69964136a5318a75977eebae~mv2.jpg.avif",
   ],
   "Audio Books": [
-    "/Rectangle 71.png",
+    "/9bed69_3f7edda29c584daa8e5e05de55e032b8~mv2.avif",
     "/9bed69_a32a46e843334bf89256ab8b558606b6~mv2.jpg.avif",
     "/9bed69_065c1a45654b433e84ccfecd4032eff0~mv2.jpg.avif",
     "/9bed69_ee503331ae044f24b2de6db01d721155~mv2.jpg.avif",

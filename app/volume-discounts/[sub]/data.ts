@@ -11,7 +11,7 @@ export type VolumeDiscountProduct = {
 
 export type VolumeDiscountQuickViewData = {
   description: string;
-  details: string[];
+  details?: string[];
   gallery: string[];
 };
 
@@ -57,42 +57,26 @@ const defaultDetails = [
 const quickViewDataByProduct: Record<string, VolumeDiscountQuickViewData> = {
   "hardcover-books": {
     description:
-      "This complete hardcover set includes all 8 Happy Hoppers books in printed format. Customers will receive the series via USPS or UPS ground service after the product is purchased.",
-    details: [
-      ...defaultDetails,
-      "Format: Hardcover Books",
-      "Set contents: 8 printed books",
-    ],
+      "Customers will receive the 8 printed, hardcover books via USPS or UPS ground service after the products are purchased.",
+    details: [],
     gallery: getProductGallery("Hardcover Books"),
   },
   "video-books": {
     description:
-      "This complete video book set includes all 8 Happy Hoppers stories in MP4 format. Customers receive access details after the product is purchased.",
-    details: [
-      ...defaultDetails,
-      "Format: Video Books",
-      "Set contents: 8 video books",
-    ],
+      "Customers receive an email to download the 8 MP4 video books after the products are purchased. ",
+    details: [],
     gallery: getProductGallery("Video Books"),
   },
   ebooks: {
     description:
-      "This complete ebook set includes all 8 Happy Hoppers stories in digital format. Customers receive access details after the product is purchased.",
-    details: [
-      ...defaultDetails,
-      "Format: Ebooks",
-      "Set contents: 8 ebooks",
-    ],
+      "Customers receive an email to download the 8 digital flipbooks after the products are purchased.",
+    details: [],
     gallery: getProductGallery("Ebooks"),
   },
   "audio-books": {
     description:
-      "This complete audio book set includes all 8 Happy Hoppers stories in audio format. Customers receive access details after the product is purchased.",
-    details: [
-      ...defaultDetails,
-      "Format: Audio Books",
-      "Set contents: 8 audio books",
-    ],
+      "Customers receive an email to download the 8 MP3 audio books after the products are purchased.",
+    details: [],
     gallery: getProductGallery("Audio Books"),
   },
 };
