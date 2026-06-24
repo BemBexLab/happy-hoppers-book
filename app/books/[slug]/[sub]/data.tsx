@@ -258,40 +258,40 @@ const quickViewDataByBook: Record<string, QuickViewBookData> = {
       ],
     },
   },
-  
+
   "power-of-thought": {
     "hardcover-books": {
       description:
         "This is a 4-color, hardcover, printed book. Customers will receive the book via USPS or UPS ground service after the product is purchased.",
       details: [
-        "Artist & Author:  Gina Ballotta",
-        "Publisher:  Happy Hoppers Books",
+        "Artist & Author: Gina Ballotta",
+        "Publisher: Happy Hoppers Books",
         "Publication year:  2025",
         "Pages: 40",
         "Language: English",
-        "ISBN #:  979-8-3507-3693-9",
-        "Dimensions:  8.5” w x 11” h",
-        "Weight:  1.0 pound",
+        "ISBN #: 979-8-3507-3693-9",
+        "Dimensions: 8.5” w x 11” h",
+        "Weight: 1.0 pound",
         "Age range: 6 to 99",
         "BISAC Category: Juvenile Fiction",
       ],
       gallery: [
-        "/9bed69_b969bb2967bd4cdfacc87fde8ad56f2f~mv2.avif",
-        "/9bed69_580083f08bb94d0aacc0ecf097cca33d~mv2.avif",
-        "/9bed69_e32809895ab146088244e37dd6e4289d~mv2.avif",
-        "/9bed69_5f336bc8dfcb4abfb5a8997f64b631c3~mv2.avif",
-        "/9bed69_3f7edda29c584daa8e5e05de55e032b8~mv2.avif",
+        "/9bed69_38f12728e96040e1ac731f46735b7cde~mv2.avif",
+        "/9bed69_84923e19be934d7c875d1139182451e7~mv2.avif",
+        "/9bed69_da14e09de3b046128b0b9d674bb27e4f~mv2.avif",
+        "/9bed69_5f08ce73d5e041f985848003331680ca~mv2.avif",
+        "/9bed69_65e18129739f4146b9e3d98a168e15ae~mv2.avif",
       ],
     },
     "video-books": {
       description:
-        "This is a 09:34 MP4 format video file, lively narrated by Gina Ballotta. Customers receive a link to download the video book after the product is purchased.",
+        "This is a 10:06 MP4 format video file, lively narrated by Gina Ballotta. Customers receive a link to download the video book after the product is purchased.",
       details: [],
       gallery: [
-        "/9bed69_3f7edda29c584daa8e5e05de55e032b8~mv2.avif",
-        "/9bed69_580083f08bb94d0aacc0ecf097cca33d~mv2.avif",
-        "/9bed69_e32809895ab146088244e37dd6e4289d~mv2.avif",
-        "/9bed69_5f336bc8dfcb4abfb5a8997f64b631c3~mv2.avif",
+        "/9bed69_5f08ce73d5e041f985848003331680ca~mv2.avif",
+        "/9bed69_84923e19be934d7c875d1139182451e7~mv2.avif",
+        "/9bed69_da14e09de3b046128b0b9d674bb27e4f~mv2.avif",
+        "/9bed69_65e18129739f4146b9e3d98a168e15ae~mv2.avif",
       ],
     },
     ebooks: {
@@ -307,7 +307,7 @@ const quickViewDataByBook: Record<string, QuickViewBookData> = {
     },
     "audio-books": {
       description:
-        "This is a 09:03 MP3 format audio file, lively narrated by Gina Ballotta. Customers receive a link to download the video book after the product is purchased.",
+        "This is a 09:36 MP3 format audio file, lively narrated by Gina Ballotta. Customers receive a link to download the video book after the product is purchased.",
       details: [],
       gallery: [
         "/9bed69_3f7edda29c584daa8e5e05de55e032b8~mv2.avif",
@@ -317,6 +317,7 @@ const quickViewDataByBook: Record<string, QuickViewBookData> = {
       ],
     },
   },
+  
   "dreams-come-true": {
     "hardcover-books": {
       description:
