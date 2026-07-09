@@ -79,7 +79,7 @@ const Info = () => {
             </p>
             <p className="text-sm text-[#2e2e2e] sm:text-base md:text-lg">
               <a href="http://www.happyhoppersbooks.com">
-                www.happyhoppersbooks.com
+                www.HappyHoppersBooks.com
               </a>
             </p>
           </div>
