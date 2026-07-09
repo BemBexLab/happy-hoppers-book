@@ -114,7 +114,7 @@ const TheHappyHoppersAdventures = () => {
                 }}
               >
                 <Link href={`/books/${book.slug}`} className="block">
-                  <BookImageSlot src={book.detailImageSrc} title={book.title} />
+                  <BookImageSlot src={book.listingImageSrc} title={book.title} />
                 </Link>
               </motion.div>
 
